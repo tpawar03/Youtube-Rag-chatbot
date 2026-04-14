@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/tanmay/Desktop/yt-rag-chatbot -not -path */venv/* -not -path */__pycache__/* -not -path *.pyc -not -path */.pytest_cache/* -type d)",
+      "Bash(ollama list:*)",
+      "Bash(source venv/bin/activate)",
+      "Bash(pip list:*)",
+      "Bash(brew install:*)",
+      "Bash(brew services:*)",
+      "Bash(ollama pull:*)"
+    ]
+  }
+}

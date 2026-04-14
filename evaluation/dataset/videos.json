@@ -1,0 +1,42 @@
+{
+  "videos": [
+    {
+      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "domain": "news_analysis",
+      "title": "Example News Analysis Video",
+      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+    },
+    {
+      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "domain": "cs_lectures",
+      "title": "Example CS Lecture",
+      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+    },
+    {
+      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "domain": "technical_reviews",
+      "title": "Example Technical Review",
+      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+    },
+    {
+      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "domain": "cooking_tutorials",
+      "title": "Example Cooking Tutorial",
+      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+    },
+    {
+      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "domain": "travel_vlogs",
+      "title": "Example Travel Vlog",
+      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+    }
+  ],
+  "domains": {
+    "news_analysis": {"count": 4, "fact_dense": true},
+    "cs_lectures": {"count": 4, "fact_dense": true},
+    "technical_reviews": {"count": 4, "fact_dense": true},
+    "cooking_tutorials": {"count": 4, "fact_dense": false},
+    "travel_vlogs": {"count": 4, "fact_dense": false}
+  },
+  "notes": "Replace video IDs with actual YouTube videos. Target: 4 videos per domain, 20 total."
+}
