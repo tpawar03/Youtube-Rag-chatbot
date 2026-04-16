@@ -1,0 +1,11 @@
+[
+  {
+    "question": "EXAMPLE: What was the main topic discussed in the video?",
+    "answer": "EXAMPLE: The video discussed the impact of AI on healthcare.",
+    "relevant_chunk_ids": [0, 1],
+    "video_id": "REPLACE_WITH_VIDEO_ID",
+    "domain": "cs_lectures",
+    "auto_generated": false,
+    "reviewed": true
+  }
+]
