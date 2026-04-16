@@ -33,7 +33,7 @@ class Embedder:
         self.model_name = EMBEDDING_MODELS[model_key]
         self._is_e5 = "e5" in self.model_name.lower()
         self.model = SentenceTransformer(self.model_name)
-        self.dimension = self.model.get_embedding_dimension()
+        self.dimension = self.model.get_sentence_embedding_dimension()
 
     def embed_documents(
         self,

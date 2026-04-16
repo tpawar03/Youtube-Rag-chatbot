@@ -7,7 +7,13 @@
       "Bash(pip list:*)",
       "Bash(brew install:*)",
       "Bash(brew services:*)",
-      "Bash(ollama pull:*)"
+      "Bash(ollama pull:*)",
+      "Bash(pip install:*)",
+      "Bash(pkill -f \"streamlit run\")",
+      "Bash(mkdir -p ~/.streamlit)",
+      "Bash(~/.streamlit/credentials.toml:*)",
+      "Bash(curl -s http://localhost:8501)",
+      "Bash(python -m pytest tests/ -v)"
     ]
   }
 }
