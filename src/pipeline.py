@@ -14,7 +14,7 @@ import logging
 from pathlib import Path
 from typing import Optional, Callable
 
-from config import PipelineConfig, TRANSCRIPTS_DIR, INDICES_DIR
+from config import PipelineConfig, GenerationConfig, LLM_MODELS, TRANSCRIPTS_DIR, INDICES_DIR
 from src.transcript.fetcher import fetch_transcript, extract_video_id
 from src.transcript.preprocessor import preprocess_transcript
 from src.chunking.fixed_chunker import fixed_chunk
@@ -23,8 +23,9 @@ from src.embedding.embedder import Embedder
 from src.vectorstore.faiss_store import FAISSStore
 from src.retrieval.retriever import Retriever
 from src.retrieval.reranker import Reranker
-from src.generation.llm import create_llm
+from src.generation.llm import create_llm, LLMConnectionError
 from src.generation.chain import RAGChain
+from src.generation.hallucination import score_sentences
 
 logger = logging.getLogger(__name__)
 
@@ -158,13 +159,11 @@ class QueryPipeline:
             else None
         )
 
-        # LLM
+        # Primary LLM and chain
         self.llm = create_llm(
             config.generation,
             skip_health_check=skip_llm_health_check,
         )
-
-        # RAG Chain
         self.chain = RAGChain(
             llm=self.llm,
             retriever=self.retriever,
@@ -172,17 +171,109 @@ class QueryPipeline:
             config=config,
         )
 
-    def ask(self, question: str) -> dict:
+        # Secondary LLM and chain (the other model from the registry)
+        llm_keys = list(LLM_MODELS.keys())
+        primary_key = config.generation.model_name
+        secondary_key = next((k for k in llm_keys if k != primary_key), primary_key)
+        secondary_gen_config = GenerationConfig(
+            model_name=secondary_key,
+            temperature=config.generation.temperature,
+            top_p=config.generation.top_p,
+            max_tokens=config.generation.max_tokens,
+            ollama_base_url=config.generation.ollama_base_url,
+        )
+        self.secondary_chain = None
+        self.secondary_model_error: str | None = None
+        try:
+            self.secondary_llm = create_llm(
+                secondary_gen_config,
+                skip_health_check=skip_llm_health_check,
+            )
+            self.secondary_chain = RAGChain(
+                llm=self.secondary_llm,
+                retriever=self.retriever,
+                reranker=self.reranker,
+                config=config,
+            )
+        except LLMConnectionError as e:
+            self.secondary_model_error = str(e)
+        self._primary_model_key = primary_key
+        self._secondary_model_key = secondary_key
+
+    def ask(self, question: str, prompt_style: str = "default") -> dict:
         """
         Ask a question about the ingested video.
 
-        Args:
-            question: User's natural language question.
+        Returns dict with: answer, sources, confidence, sentence_scores.
+        """
+        result = self.chain.ask(question, prompt_style=prompt_style)
+        result["sentence_scores"] = score_sentences(
+            result["answer"], result["sources"]
+        )
+        return result
+
+    def ask_dual(self, question: str, prompt_style: str = "default") -> dict:
+        """
+        Ask a question and get responses from both models.
+
+        Retrieval is performed once and shared. Each model generates
+        independently from the same context.
 
         Returns:
-            Dict with keys: answer, sources.
+            Dict with keys:
+                - question (str)
+                - primary (dict): model key, answer, sources
+                - secondary (dict): model key, answer, sources
+                - candidates (list): retrieved chunks (for committing history later)
         """
-        return self.chain.ask(question)
+        if self.secondary_chain is None:
+            raise LLMConnectionError(
+                self.secondary_model_error
+                or f"Model '{self._secondary_model_key}' is unavailable."
+            )
+
+        from src.generation.prompts import format_context
+
+        standalone = self.chain._condense_question(question)
+
+        candidates = self.retriever.retrieve(standalone)
+        if self.reranker and self.config.retrieval.use_reranker:
+            candidates = self.reranker.rerank(
+                standalone, candidates, top_k=self.config.retrieval.top_k
+            )
+        else:
+            candidates = candidates[: self.config.retrieval.top_k]
+
+        context = format_context(candidates)
+
+        primary_result = self.chain.generate_from_context(
+            question, context, candidates, prompt_style=prompt_style
+        )
+        secondary_result = self.secondary_chain.generate_from_context(
+            question, context, candidates, prompt_style=prompt_style
+        )
+
+        primary_result["sentence_scores"] = score_sentences(
+            primary_result["answer"], primary_result["sources"]
+        )
+        secondary_result["sentence_scores"] = score_sentences(
+            secondary_result["answer"], secondary_result["sources"]
+        )
+
+        return {
+            "question": question,
+            "primary": {"model": self._primary_model_key, **primary_result},
+            "secondary": {"model": self._secondary_model_key, **secondary_result},
+            "candidates": candidates,
+        }
+
+    def commit_dual_selection(self, question: str, selected_answer: str):
+        """
+        After the user picks a response from ask_dual, record it in
+        both chains' memory so future follow-ups are contextually aware.
+        """
+        self.chain.update_memory(question, selected_answer)
+        self.secondary_chain.update_memory(question, selected_answer)
 
     def ask_batch(self, questions: list[str]) -> list[dict]:
         """

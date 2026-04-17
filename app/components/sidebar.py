@@ -20,9 +20,11 @@ from config import (
     EMBEDDING_MODELS,
     LLM_MODELS,
 )
+from src.generation.prompts import PROMPT_STYLE_LABELS
+from app.utils import load_scoreboard
 
 
-def render_sidebar() -> tuple[str | None, PipelineConfig, bool]:
+def render_sidebar() -> tuple[str | None, PipelineConfig, bool, str]:
     """
     Render the sidebar and return the current configuration.
 
@@ -31,6 +33,7 @@ def render_sidebar() -> tuple[str | None, PipelineConfig, bool]:
             - video_url (str | None): URL entered by user, or None.
             - config (PipelineConfig): Current UI configuration.
             - ingest_clicked (bool): Whether the ingest button was pressed.
+            - prompt_style (str): Selected prompt style key.
     """
     with st.sidebar:
         # ── Header ──
@@ -109,6 +112,15 @@ def render_sidebar() -> tuple[str | None, PipelineConfig, bool]:
             key="llm_model",
         )
 
+        # Prompt style
+        prompt_style = st.selectbox(
+            "Response Style",
+            options=list(PROMPT_STYLE_LABELS.keys()),
+            format_func=lambda k: PROMPT_STYLE_LABELS.get(k, k),
+            key="prompt_style",
+            help="Controls how the LLM structures its answer.",
+        )
+
         st.divider()
 
         # ── Ingest Button ──
@@ -133,6 +145,26 @@ def render_sidebar() -> tuple[str | None, PipelineConfig, bool]:
                 st.session_state.messages = []
                 st.rerun()
 
+        # ── Model Scoreboard ──
+        scoreboard = load_scoreboard()
+        if scoreboard:
+            st.divider()
+            st.subheader("🏆 Model Scoreboard")
+            model_labels = {"mistral": "Mistral-7B", "llama2": "Llama-2-7B"}
+            total = sum(scoreboard.values())
+            for model, wins in sorted(scoreboard.items(), key=lambda x: -x[1]):
+                label = model_labels.get(model, model)
+                pct = int(wins / total * 100) if total else 0
+                st.markdown(
+                    f"<div style='display:flex;justify-content:space-between;"
+                    f"align-items:center;margin-bottom:0.3rem;'>"
+                    f"<span style='color:#c4b5fd;font-size:0.85rem;'>{label}</span>"
+                    f"<span style='color:#94a3b8;font-size:0.85rem;'>{wins} wins ({pct}%)</span>"
+                    f"</div>",
+                    unsafe_allow_html=True,
+                )
+                st.progress(pct / 100)
+
     # ── Build config ──
     config = PipelineConfig(
         embedding_model=embedding_key,
@@ -148,4 +180,4 @@ def render_sidebar() -> tuple[str | None, PipelineConfig, bool]:
         ),
     )
 
-    return (video_url if video_url else None), config, ingest_clicked
+    return (video_url if video_url else None), config, ingest_clicked, prompt_style

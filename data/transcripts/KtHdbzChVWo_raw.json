@@ -1,0 +1,2587 @@
+[
+  {
+    "text": "If you want to become an AI engineer in",
+    "start": 0.08,
+    "duration": 5.199
+  },
+  {
+    "text": "2026, here is the exact six-month road",
+    "start": 2.24,
+    "duration": 4.96
+  },
+  {
+    "text": "map that will get you there. And I know",
+    "start": 5.279,
+    "duration": 4.081
+  },
+  {
+    "text": "what you're thinking. 6 months sounds",
+    "start": 7.2,
+    "duration": 4.16
+  },
+  {
+    "text": "way too short, right? Don't you need a",
+    "start": 9.36,
+    "duration": 4.239
+  },
+  {
+    "text": "lot of years of experience, a PhD? Don't",
+    "start": 11.36,
+    "duration": 3.92
+  },
+  {
+    "text": "you need reading a lot of research",
+    "start": 13.599,
+    "duration": 3.921
+  },
+  {
+    "text": "papers every day and somehow keeping up",
+    "start": 15.28,
+    "duration": 3.68
+  },
+  {
+    "text": "with everything that's happening on",
+    "start": 17.52,
+    "duration": 3.919
+  },
+  {
+    "text": "LinkedIn? No, you really don't. Here is",
+    "start": 18.96,
+    "duration": 5.36
+  },
+  {
+    "text": "why. An AI engineer builds applications",
+    "start": 21.439,
+    "duration": 5.121
+  },
+  {
+    "text": "powered by AI, which is primarily large",
+    "start": 24.32,
+    "duration": 4.24
+  },
+  {
+    "text": "language models. We are not training",
+    "start": 26.56,
+    "duration": 3.84
+  },
+  {
+    "text": "models from scratch. We're not doing",
+    "start": 28.56,
+    "duration": 3.92
+  },
+  {
+    "text": "research. We are taking powerful AI",
+    "start": 30.4,
+    "duration": 4.4
+  },
+  {
+    "text": "capabilities that already exist and",
+    "start": 32.48,
+    "duration": 4.32
+  },
+  {
+    "text": "turning them into products that solve",
+    "start": 34.8,
+    "duration": 4.56
+  },
+  {
+    "text": "real world problems. And that yes, you",
+    "start": 36.8,
+    "duration": 4.16
+  },
+  {
+    "text": "can learn that in 6 months if you're",
+    "start": 39.36,
+    "duration": 3.359
+  },
+  {
+    "text": "focused. Now, if you're watching this",
+    "start": 40.96,
+    "duration": 3.439
+  },
+  {
+    "text": "video, you're probably feeling two",
+    "start": 42.719,
+    "duration": 4.0
+  },
+  {
+    "text": "things at once. On one hand, you're",
+    "start": 44.399,
+    "duration": 4.241
+  },
+  {
+    "text": "excited. AI engineering sounds",
+    "start": 46.719,
+    "duration": 3.921
+  },
+  {
+    "text": "incredible. Every week, there is",
+    "start": 48.64,
+    "duration": 4.079
+  },
+  {
+    "text": "something new. Whether it's a new model,",
+    "start": 50.64,
+    "duration": 4.48
+  },
+  {
+    "text": "new tools, new startups, it feels like",
+    "start": 52.719,
+    "duration": 4.48
+  },
+  {
+    "text": "the most exciting time to be in this",
+    "start": 55.12,
+    "duration": 4.079
+  },
+  {
+    "text": "field. But on the other hand, you're",
+    "start": 57.199,
+    "duration": 3.68
+  },
+  {
+    "text": "probably overwhelmed, maybe even",
+    "start": 59.199,
+    "duration": 3.921
+  },
+  {
+    "text": "intimidated. Everyone else seems to",
+    "start": 60.879,
+    "duration": 3.92
+  },
+  {
+    "text": "already know what they're doing, and",
+    "start": 63.12,
+    "duration": 3.52
+  },
+  {
+    "text": "you're thinking, \"How am I going to ever",
+    "start": 64.799,
+    "duration": 3.761
+  },
+  {
+    "text": "keep up with this?\" Let me tell you that",
+    "start": 66.64,
+    "duration": 3.76
+  },
+  {
+    "text": "feeling is normal, but it is not",
+    "start": 68.56,
+    "duration": 3.68
+  },
+  {
+    "text": "accurate. And in this video, I'll walk",
+    "start": 70.4,
+    "duration": 4.0
+  },
+  {
+    "text": "you through exactly how I would approach",
+    "start": 72.24,
+    "duration": 4.4
+  },
+  {
+    "text": "this starting from scratch, month by",
+    "start": 74.4,
+    "duration": 4.399
+  },
+  {
+    "text": "month, with real project and very honest",
+    "start": 76.64,
+    "duration": 4.4
+  },
+  {
+    "text": "advice. If you don't know me, I'm Ashwar",
+    "start": 78.799,
+    "duration": 4.401
+  },
+  {
+    "text": "Shawasan. I've been in the ML and AI",
+    "start": 81.04,
+    "duration": 4.8
+  },
+  {
+    "text": "space for over 10 years. I got my mers",
+    "start": 83.2,
+    "duration": 4.88
+  },
+  {
+    "text": "in data science from Columbia University",
+    "start": 85.84,
+    "duration": 3.84
+  },
+  {
+    "text": "and I've worked at companies like",
+    "start": 88.08,
+    "duration": 4.399
+  },
+  {
+    "text": "Microsoft, Google and IBM. Currently I",
+    "start": 89.68,
+    "duration": 5.119
+  },
+  {
+    "text": "lead AI developer relations at Fireworks",
+    "start": 92.479,
+    "duration": 4.241
+  },
+  {
+    "text": "AI which is one of the top AI startups",
+    "start": 94.799,
+    "duration": 3.841
+  },
+  {
+    "text": "out there. So I've seen what actually",
+    "start": 96.72,
+    "duration": 4.079
+  },
+  {
+    "text": "gets people hired whether it's in big",
+    "start": 98.64,
+    "duration": 4.479
+  },
+  {
+    "text": "tech or fastmoving startups. I'll share",
+    "start": 100.799,
+    "duration": 4.401
+  },
+  {
+    "text": "all of my favorite resources at the end",
+    "start": 103.119,
+    "duration": 4.161
+  },
+  {
+    "text": "so definitely stick around for that. Now",
+    "start": 105.2,
+    "duration": 4.16
+  },
+  {
+    "text": "the question is who is this road map",
+    "start": 107.28,
+    "duration": 4.72
+  },
+  {
+    "text": "for? The most common path into AI",
+    "start": 109.36,
+    "duration": 4.48
+  },
+  {
+    "text": "engineering is definitely software",
+    "start": 112.0,
+    "duration": 4.159
+  },
+  {
+    "text": "engineering. If you've been working as a",
+    "start": 113.84,
+    "duration": 4.4
+  },
+  {
+    "text": "backend or a full stack developer,",
+    "start": 116.159,
+    "duration": 3.761
+  },
+  {
+    "text": "you've already know how to build",
+    "start": 118.24,
+    "duration": 3.839
+  },
+  {
+    "text": "systems, you know how to work with APIs,",
+    "start": 119.92,
+    "duration": 4.159
+  },
+  {
+    "text": "and you know how to ship to production.",
+    "start": 122.079,
+    "duration": 4.241
+  },
+  {
+    "text": "Adding AI on top of that is pretty",
+    "start": 124.079,
+    "duration": 4.24
+  },
+  {
+    "text": "natural. But that's not the only way to",
+    "start": 126.32,
+    "duration": 4.079
+  },
+  {
+    "text": "get it. I have seen front-end developers",
+    "start": 128.319,
+    "duration": 4.0
+  },
+  {
+    "text": "also make this transition. If you're",
+    "start": 130.399,
+    "duration": 4.48
+  },
+  {
+    "text": "building user interfaces, you understand",
+    "start": 132.319,
+    "duration": 5.28
+  },
+  {
+    "text": "how to create great experience. And AI",
+    "start": 134.879,
+    "duration": 5.44
+  },
+  {
+    "text": "engineering is increasingly about AI",
+    "start": 137.599,
+    "duration": 5.041
+  },
+  {
+    "text": "powered interfaces, whether it's chat",
+    "start": 140.319,
+    "duration": 4.961
+  },
+  {
+    "text": "bots, co-pilots, or assistants. I've",
+    "start": 142.64,
+    "duration": 4.88
+  },
+  {
+    "text": "seen product managers switch into AI",
+    "start": 145.28,
+    "duration": 3.92
+  },
+  {
+    "text": "engineering as well. If you deeply",
+    "start": 147.52,
+    "duration": 3.52
+  },
+  {
+    "text": "understand user problems and you're",
+    "start": 149.2,
+    "duration": 3.92
+  },
+  {
+    "text": "willing to get technical, you have a",
+    "start": 151.04,
+    "duration": 4.16
+  },
+  {
+    "text": "massive advantage. What I have seen",
+    "start": 153.12,
+    "duration": 4.08
+  },
+  {
+    "text": "mattered in most case wasn't their",
+    "start": 155.2,
+    "duration": 4.24
+  },
+  {
+    "text": "previous title. It was the willingness",
+    "start": 157.2,
+    "duration": 4.399
+  },
+  {
+    "text": "to put in the effort that you need. Now,",
+    "start": 159.44,
+    "duration": 4.4
+  },
+  {
+    "text": "here is the good news. You don't have to",
+    "start": 161.599,
+    "duration": 4.801
+  },
+  {
+    "text": "be an expert coder to start. You need to",
+    "start": 163.84,
+    "duration": 4.96
+  },
+  {
+    "text": "be comfortable enough with Python to",
+    "start": 166.4,
+    "duration": 5.04
+  },
+  {
+    "text": "call APIs, to process data, and build",
+    "start": 168.8,
+    "duration": 5.36
+  },
+  {
+    "text": "basic applications. That is a much lower",
+    "start": 171.44,
+    "duration": 5.12
+  },
+  {
+    "text": "bar than most people think. Now, if that",
+    "start": 174.16,
+    "duration": 4.48
+  },
+  {
+    "text": "sounds exciting, let's build your road",
+    "start": 176.56,
+    "duration": 4.72
+  },
+  {
+    "text": "map. So, starting with month zero. I",
+    "start": 178.64,
+    "duration": 4.48
+  },
+  {
+    "text": "call this month zero because this is the",
+    "start": 181.28,
+    "duration": 4.16
+  },
+  {
+    "text": "part everybody rushes through or skips.",
+    "start": 183.12,
+    "duration": 4.32
+  },
+  {
+    "text": "Then a few months later, they're making",
+    "start": 185.44,
+    "duration": 3.6
+  },
+  {
+    "text": "viewer decisions because they never",
+    "start": 187.44,
+    "duration": 3.2
+  },
+  {
+    "text": "understood the landscape that they're",
+    "start": 189.04,
+    "duration": 4.0
+  },
+  {
+    "text": "operating in. So month zero is about",
+    "start": 190.64,
+    "duration": 4.8
+  },
+  {
+    "text": "building your mental map of the entire",
+    "start": 193.04,
+    "duration": 4.96
+  },
+  {
+    "text": "ecosystem. By the end of this month, you",
+    "start": 195.44,
+    "duration": 4.96
+  },
+  {
+    "text": "should be able to look at any AI product",
+    "start": 198.0,
+    "duration": 4.879
+  },
+  {
+    "text": "and understand roughly how it works,",
+    "start": 200.4,
+    "duration": 4.24
+  },
+  {
+    "text": "what stack it is using, and what",
+    "start": 202.879,
+    "duration": 3.521
+  },
+  {
+    "text": "trade-offs the builders made. So let me",
+    "start": 204.64,
+    "duration": 3.44
+  },
+  {
+    "text": "break down that stack for you. At the",
+    "start": 206.4,
+    "duration": 3.839
+  },
+  {
+    "text": "foundation, we have the models. These",
+    "start": 208.08,
+    "duration": 4.48
+  },
+  {
+    "text": "come in two flavors. proprietary models",
+    "start": 210.239,
+    "duration": 4.881
+  },
+  {
+    "text": "through APIs like OpenAI and Anthropic",
+    "start": 212.56,
+    "duration": 4.239
+  },
+  {
+    "text": "and open-source models that you can",
+    "start": 215.12,
+    "duration": 3.92
+  },
+  {
+    "text": "either run yourself or access through",
+    "start": 216.799,
+    "duration": 4.561
+  },
+  {
+    "text": "inference providers like Fireworks AI or",
+    "start": 219.04,
+    "duration": 4.88
+  },
+  {
+    "text": "Grock. Above that we have the retrieval",
+    "start": 221.36,
+    "duration": 4.32
+  },
+  {
+    "text": "layer. This is how you give AR",
+    "start": 223.92,
+    "duration": 3.76
+  },
+  {
+    "text": "applications access to specific",
+    "start": 225.68,
+    "duration": 4.4
+  },
+  {
+    "text": "knowledge, your company's documents, the",
+    "start": 227.68,
+    "duration": 3.919
+  },
+  {
+    "text": "product information, whatever you want",
+    "start": 230.08,
+    "duration": 3.68
+  },
+  {
+    "text": "to put in. This involves embeddings,",
+    "start": 231.599,
+    "duration": 4.72
+  },
+  {
+    "text": "vector databases and search. Then we",
+    "start": 233.76,
+    "duration": 4.559
+  },
+  {
+    "text": "have the orchestration layer. So",
+    "start": 236.319,
+    "duration": 4.48
+  },
+  {
+    "text": "frameworks like LANChain or Llama index",
+    "start": 238.319,
+    "duration": 4.801
+  },
+  {
+    "text": "that helps application logic and tie",
+    "start": 240.799,
+    "duration": 4.241
+  },
+  {
+    "text": "everything together. Finally, the",
+    "start": 243.12,
+    "duration": 4.0
+  },
+  {
+    "text": "application layer which is the actual",
+    "start": 245.04,
+    "duration": 4.64
+  },
+  {
+    "text": "interface that users interact with the",
+    "start": 247.12,
+    "duration": 4.8
+  },
+  {
+    "text": "APIs that you expose, the integrations",
+    "start": 249.68,
+    "duration": 4.4
+  },
+  {
+    "text": "that you build. So what you should",
+    "start": 251.92,
+    "duration": 4.719
+  },
+  {
+    "text": "actually do this month is get your hands",
+    "start": 254.08,
+    "duration": 5.2
+  },
+  {
+    "text": "dirty with different models. Sign up for",
+    "start": 256.639,
+    "duration": 4.641
+  },
+  {
+    "text": "OpenAI, sign up for Anthropic and at",
+    "start": 259.28,
+    "duration": 4.32
+  },
+  {
+    "text": "least one open-source provider. Try",
+    "start": 261.28,
+    "duration": 4.16
+  },
+  {
+    "text": "making some API calls to these large",
+    "start": 263.6,
+    "duration": 4.24
+  },
+  {
+    "text": "language models. Compare the responses",
+    "start": 265.44,
+    "duration": 4.56
+  },
+  {
+    "text": "and then notice how different models",
+    "start": 267.84,
+    "duration": 4.32
+  },
+  {
+    "text": "have different personalities, how they",
+    "start": 270.0,
+    "duration": 3.919
+  },
+  {
+    "text": "have different strengths and how",
+    "start": 272.16,
+    "duration": 4.0
+  },
+  {
+    "text": "different failure modes. This direct",
+    "start": 273.919,
+    "duration": 4.56
+  },
+  {
+    "text": "experience is invaluable. Then I would",
+    "start": 276.16,
+    "duration": 4.08
+  },
+  {
+    "text": "say you need to explore the tooling",
+    "start": 278.479,
+    "duration": 3.44
+  },
+  {
+    "text": "landscape. You don't have to commit to",
+    "start": 280.24,
+    "duration": 3.76
+  },
+  {
+    "text": "any particular framework yet. Just",
+    "start": 281.919,
+    "duration": 4.56
+  },
+  {
+    "text": "explore. Look at Langchain, Llama Index",
+    "start": 284.0,
+    "duration": 4.96
+  },
+  {
+    "text": "and the Open AI SDK. Read the docs,",
+    "start": 286.479,
+    "duration": 4.321
+  },
+  {
+    "text": "understand what problems each tool is",
+    "start": 288.96,
+    "duration": 4.4
+  },
+  {
+    "text": "solving, and then study how existing AI",
+    "start": 290.8,
+    "duration": 4.48
+  },
+  {
+    "text": "products work. Pick five products that",
+    "start": 293.36,
+    "duration": 3.839
+  },
+  {
+    "text": "you admire. let's say chat GPD,",
+    "start": 295.28,
+    "duration": 3.919
+  },
+  {
+    "text": "perplexity, cursor and whatever. Then",
+    "start": 297.199,
+    "duration": 4.241
+  },
+  {
+    "text": "reverse engineer them. What is probably",
+    "start": 299.199,
+    "duration": 4.321
+  },
+  {
+    "text": "happening behind the scenes and then",
+    "start": 301.44,
+    "duration": 4.24
+  },
+  {
+    "text": "make decisions about where to start.",
+    "start": 303.52,
+    "duration": 4.72
+  },
+  {
+    "text": "Pick one model provider to learn deeply.",
+    "start": 305.68,
+    "duration": 4.72
+  },
+  {
+    "text": "Pick one framework to build with. You",
+    "start": 308.24,
+    "duration": 4.08
+  },
+  {
+    "text": "can expand on that later, but starting",
+    "start": 310.4,
+    "duration": 4.16
+  },
+  {
+    "text": "focused gets you further faster. Then in",
+    "start": 312.32,
+    "duration": 3.84
+  },
+  {
+    "text": "month one is where you go from",
+    "start": 314.56,
+    "duration": 3.84
+  },
+  {
+    "text": "understanding the landscape to actually",
+    "start": 316.16,
+    "duration": 4.56
+  },
+  {
+    "text": "working with models efficiently. And I",
+    "start": 318.4,
+    "duration": 4.72
+  },
+  {
+    "text": "need you to hear this. Prompting is not",
+    "start": 320.72,
+    "duration": 4.96
+  },
+  {
+    "text": "a soft skill. It is engineering. The",
+    "start": 323.12,
+    "duration": 4.799
+  },
+  {
+    "text": "difference between a prompt that kind of",
+    "start": 325.68,
+    "duration": 4.4
+  },
+  {
+    "text": "works and the one that works reliably in",
+    "start": 327.919,
+    "duration": 4.72
+  },
+  {
+    "text": "production is huge. And that difference",
+    "start": 330.08,
+    "duration": 4.8
+  },
+  {
+    "text": "comes down to systemic thinking. So",
+    "start": 332.639,
+    "duration": 4.721
+  },
+  {
+    "text": "first understand how these models work",
+    "start": 334.88,
+    "duration": 4.8
+  },
+  {
+    "text": "conceptually. You don't need transformer",
+    "start": 337.36,
+    "duration": 4.64
+  },
+  {
+    "text": "architecture details but understand",
+    "start": 339.68,
+    "duration": 5.04
+  },
+  {
+    "text": "tokenization, how text gets broken into",
+    "start": 342.0,
+    "duration": 5.52
+  },
+  {
+    "text": "pieces and why it matters for cost and",
+    "start": 344.72,
+    "duration": 4.88
+  },
+  {
+    "text": "context limits. Understand context",
+    "start": 347.52,
+    "duration": 4.64
+  },
+  {
+    "text": "windows, how much information a model",
+    "start": 349.6,
+    "duration": 4.72
+  },
+  {
+    "text": "can consider and what happens when you",
+    "start": 352.16,
+    "duration": 4.0
+  },
+  {
+    "text": "exceed it. Understand things like",
+    "start": 354.32,
+    "duration": 4.08
+  },
+  {
+    "text": "temperature and other parameters and how",
+    "start": 356.16,
+    "duration": 4.64
+  },
+  {
+    "text": "they affect randomness and creativity of",
+    "start": 358.4,
+    "duration": 5.2
+  },
+  {
+    "text": "a model. Second, learn to write prompts",
+    "start": 360.8,
+    "duration": 4.88
+  },
+  {
+    "text": "that actually work. Clear instructions",
+    "start": 363.6,
+    "duration": 3.599
+  },
+  {
+    "text": "matter. So instead of saying just",
+    "start": 365.68,
+    "duration": 3.359
+  },
+  {
+    "text": "summarize this, try something like",
+    "start": 367.199,
+    "duration": 3.521
+  },
+  {
+    "text": "summarize this document into three",
+    "start": 369.039,
+    "duration": 3.761
+  },
+  {
+    "text": "bullet points focusing on key decisions",
+    "start": 370.72,
+    "duration": 4.16
+  },
+  {
+    "text": "and their rational. Learn few short",
+    "start": 372.8,
+    "duration": 4.56
+  },
+  {
+    "text": "prompting giving examples of what you",
+    "start": 374.88,
+    "duration": 4.8
+  },
+  {
+    "text": "want. This is incredibly powerful for",
+    "start": 377.36,
+    "duration": 4.32
+  },
+  {
+    "text": "consistent outputs. Then learn",
+    "start": 379.68,
+    "duration": 4.4
+  },
+  {
+    "text": "structured outputs. Getting clean JSON",
+    "start": 381.68,
+    "duration": 4.48
+  },
+  {
+    "text": "from a LLM sounds simple but it is",
+    "start": 384.08,
+    "duration": 4.64
+  },
+  {
+    "text": "tricky. So learn response formats,",
+    "start": 386.16,
+    "duration": 4.879
+  },
+  {
+    "text": "output validation, and how to handle it",
+    "start": 388.72,
+    "duration": 3.68
+  },
+  {
+    "text": "when the model ignores your",
+    "start": 391.039,
+    "duration": 3.761
+  },
+  {
+    "text": "instructions. Third, understand the",
+    "start": 392.4,
+    "duration": 5.12
+  },
+  {
+    "text": "practical stuff. Streaming responses so",
+    "start": 394.8,
+    "duration": 4.959
+  },
+  {
+    "text": "that users don't have to wait for the",
+    "start": 397.52,
+    "duration": 4.08
+  },
+  {
+    "text": "complete generation of the answer. And",
+    "start": 399.759,
+    "duration": 3.681
+  },
+  {
+    "text": "then things like error handling when the",
+    "start": 401.6,
+    "duration": 5.28
+  },
+  {
+    "text": "APIs fail, rate limits and retry logic,",
+    "start": 403.44,
+    "duration": 5.599
+  },
+  {
+    "text": "cost management, etc. Because every",
+    "start": 406.88,
+    "duration": 4.8
+  },
+  {
+    "text": "token costs money. Now in this month, I",
+    "start": 409.039,
+    "duration": 4.16
+  },
+  {
+    "text": "want you to build three small",
+    "start": 411.68,
+    "duration": 3.6
+  },
+  {
+    "text": "applications. A domain specific",
+    "start": 413.199,
+    "duration": 4.321
+  },
+  {
+    "text": "assistant. So pick a topic that you know",
+    "start": 415.28,
+    "duration": 4.56
+  },
+  {
+    "text": "well. Build something that answers",
+    "start": 417.52,
+    "duration": 4.56
+  },
+  {
+    "text": "questions knowledgeably. This teaches",
+    "start": 419.84,
+    "duration": 4.799
+  },
+  {
+    "text": "you system prompts and context setting.",
+    "start": 422.08,
+    "duration": 5.119
+  },
+  {
+    "text": "Then build a structured data extractor.",
+    "start": 424.639,
+    "duration": 4.641
+  },
+  {
+    "text": "So start with messy text and extract",
+    "start": 427.199,
+    "duration": 4.0
+  },
+  {
+    "text": "structured information from it. This",
+    "start": 429.28,
+    "duration": 3.759
+  },
+  {
+    "text": "teaches you output formatting and",
+    "start": 431.199,
+    "duration": 4.321
+  },
+  {
+    "text": "validation. Then build a multi-turn",
+    "start": 433.039,
+    "duration": 4.72
+  },
+  {
+    "text": "conversational app, something where",
+    "start": 435.52,
+    "duration": 4.399
+  },
+  {
+    "text": "previous messages matter. This teaches",
+    "start": 437.759,
+    "duration": 4.481
+  },
+  {
+    "text": "you conversation history and context",
+    "start": 439.919,
+    "duration": 4.241
+  },
+  {
+    "text": "management. And throughout all of this,",
+    "start": 442.24,
+    "duration": 4.32
+  },
+  {
+    "text": "develop an iteration workflow. When a",
+    "start": 444.16,
+    "duration": 4.96
+  },
+  {
+    "text": "prompt fails, don't randomly tweak it.",
+    "start": 446.56,
+    "duration": 4.639
+  },
+  {
+    "text": "Analyze what went wrong. Form a",
+    "start": 449.12,
+    "duration": 4.4
+  },
+  {
+    "text": "hypothesis, make a targeted change, and",
+    "start": 451.199,
+    "duration": 5.12
+  },
+  {
+    "text": "test it again. This systematic approach",
+    "start": 453.52,
+    "duration": 4.799
+  },
+  {
+    "text": "separates consistent results from the",
+    "start": 456.319,
+    "duration": 4.0
+  },
+  {
+    "text": "lucky ones. Now month two is where you",
+    "start": 458.319,
+    "duration": 4.081
+  },
+  {
+    "text": "go from experimentation to real",
+    "start": 460.319,
+    "duration": 4.481
+  },
+  {
+    "text": "application building. The key shift here",
+    "start": 462.4,
+    "duration": 5.199
+  },
+  {
+    "text": "is you start thinking in systems and not",
+    "start": 464.8,
+    "duration": 4.64
+  },
+  {
+    "text": "just individual prompts. Real",
+    "start": 467.599,
+    "duration": 4.16
+  },
+  {
+    "text": "applications have multiple components",
+    "start": 469.44,
+    "duration": 4.8
+  },
+  {
+    "text": "working together. Whether it is handling",
+    "start": 471.759,
+    "duration": 4.961
+  },
+  {
+    "text": "input, whether it's processing, calling",
+    "start": 474.24,
+    "duration": 5.28
+  },
+  {
+    "text": "multiple prompts or models, whether it's",
+    "start": 476.72,
+    "duration": 5.199
+  },
+  {
+    "text": "handling errors, whether it's presenting",
+    "start": 479.52,
+    "duration": 4.32
+  },
+  {
+    "text": "results, the most important concept",
+    "start": 481.919,
+    "duration": 3.84
+  },
+  {
+    "text": "you'll learn in this month is tool use,",
+    "start": 483.84,
+    "duration": 3.84
+  },
+  {
+    "text": "also known as function calling. Here is",
+    "start": 485.759,
+    "duration": 3.921
+  },
+  {
+    "text": "the thing about LLMs on their own. They",
+    "start": 487.68,
+    "duration": 4.239
+  },
+  {
+    "text": "can only generate text. They can't check",
+    "start": 489.68,
+    "duration": 4.16
+  },
+  {
+    "text": "calendars. They can't send you emails.",
+    "start": 491.919,
+    "duration": 3.761
+  },
+  {
+    "text": "They can't look up information or they",
+    "start": 493.84,
+    "duration": 4.16
+  },
+  {
+    "text": "can't even run code. Tool use is how you",
+    "start": 495.68,
+    "duration": 4.639
+  },
+  {
+    "text": "give them those capabilities. You define",
+    "start": 498.0,
+    "duration": 4.8
+  },
+  {
+    "text": "functions that the models can call. It",
+    "start": 500.319,
+    "duration": 4.72
+  },
+  {
+    "text": "decides when to use them and with what",
+    "start": 502.8,
+    "duration": 4.959
+  },
+  {
+    "text": "parameters. Your code executes them and",
+    "start": 505.039,
+    "duration": 4.641
+  },
+  {
+    "text": "then returns the value. This is",
+    "start": 507.759,
+    "duration": 4.481
+  },
+  {
+    "text": "fundamental. Almost every useful",
+    "start": 509.68,
+    "duration": 5.2
+  },
+  {
+    "text": "applications involves the AI actually",
+    "start": 512.24,
+    "duration": 5.12
+  },
+  {
+    "text": "doing something not just talking. So now",
+    "start": 514.88,
+    "duration": 4.56
+  },
+  {
+    "text": "in this particular month I want you to",
+    "start": 517.36,
+    "duration": 4.4
+  },
+  {
+    "text": "build a tool using assistant that takes",
+    "start": 519.44,
+    "duration": 4.24
+  },
+  {
+    "text": "real actions. It could be doing things",
+    "start": 521.76,
+    "duration": 4.32
+  },
+  {
+    "text": "like searching the web, reading files,",
+    "start": 523.68,
+    "duration": 4.719
+  },
+  {
+    "text": "calling an API that you care about. And",
+    "start": 526.08,
+    "duration": 4.879
+  },
+  {
+    "text": "the key here is doing real things, not",
+    "start": 528.399,
+    "duration": 4.401
+  },
+  {
+    "text": "just chatting with the user. This needs",
+    "start": 530.959,
+    "duration": 3.521
+  },
+  {
+    "text": "to be an application with multiple",
+    "start": 532.8,
+    "duration": 3.92
+  },
+  {
+    "text": "steps, something called as chaining. So",
+    "start": 534.48,
+    "duration": 4.24
+  },
+  {
+    "text": "build an application where one LLM",
+    "start": 536.72,
+    "duration": 4.16
+  },
+  {
+    "text": "informs the next. It could be a research",
+    "start": 538.72,
+    "duration": 4.16
+  },
+  {
+    "text": "assistant that searches, synthesizes",
+    "start": 540.88,
+    "duration": 3.84
+  },
+  {
+    "text": "findings, then formats everything for",
+    "start": 542.88,
+    "duration": 3.84
+  },
+  {
+    "text": "the user or something that handles",
+    "start": 544.72,
+    "duration": 4.16
+  },
+  {
+    "text": "different input types whether it is",
+    "start": 546.72,
+    "duration": 4.32
+  },
+  {
+    "text": "text, images, if you're using multimodal",
+    "start": 548.88,
+    "duration": 4.32
+  },
+  {
+    "text": "model, it could be files and this",
+    "start": 551.04,
+    "duration": 4.479
+  },
+  {
+    "text": "flexibility teaches you what real",
+    "start": 553.2,
+    "duration": 4.56
+  },
+  {
+    "text": "applications really require. So I would",
+    "start": 555.519,
+    "duration": 4.161
+  },
+  {
+    "text": "say pick one framework and learn it",
+    "start": 557.76,
+    "duration": 4.72
+  },
+  {
+    "text": "well. Langchain is popular with tons of",
+    "start": 559.68,
+    "duration": 5.44
+  },
+  {
+    "text": "documentation. Llama Index is great for",
+    "start": 562.48,
+    "duration": 5.2
+  },
+  {
+    "text": "document processing or just build more",
+    "start": 565.12,
+    "duration": 5.279
+  },
+  {
+    "text": "from scratch with SDKs and understanding",
+    "start": 567.68,
+    "duration": 5.279
+  },
+  {
+    "text": "what frameworks do under the hood really",
+    "start": 570.399,
+    "duration": 4.961
+  },
+  {
+    "text": "matters regardless of what you use. Here",
+    "start": 572.959,
+    "duration": 4.241
+  },
+  {
+    "text": "is what you'll learn the hard way this",
+    "start": 575.36,
+    "duration": 4.8
+  },
+  {
+    "text": "month. Token costs add up fast. A prompt",
+    "start": 577.2,
+    "duration": 6.24
+  },
+  {
+    "text": "using 2,000 tokens when 500 would work",
+    "start": 580.16,
+    "duration": 5.84
+  },
+  {
+    "text": "is four times more cost at scale and",
+    "start": 583.44,
+    "duration": 4.88
+  },
+  {
+    "text": "latency matters more than you think.",
+    "start": 586.0,
+    "duration": 4.88
+  },
+  {
+    "text": "Users are impatient. A 10-second",
+    "start": 588.32,
+    "duration": 4.56
+  },
+  {
+    "text": "response might be correct but",
+    "start": 590.88,
+    "duration": 4.48
+  },
+  {
+    "text": "practically unusable. And prompts that",
+    "start": 592.88,
+    "duration": 5.519
+  },
+  {
+    "text": "work 90% of the time are not production",
+    "start": 595.36,
+    "duration": 6.56
+  },
+  {
+    "text": "ready. That 10% failure will drive users",
+    "start": 598.399,
+    "duration": 6.241
+  },
+  {
+    "text": "crazy. So think about these edge cases",
+    "start": 601.92,
+    "duration": 4.72
+  },
+  {
+    "text": "from the very beginning. Then in month",
+    "start": 604.64,
+    "duration": 4.72
+  },
+  {
+    "text": "three, pay really close attention here.",
+    "start": 606.64,
+    "duration": 4.879
+  },
+  {
+    "text": "A huge chunk of real world AI",
+    "start": 609.36,
+    "duration": 4.64
+  },
+  {
+    "text": "engineering is RAG, which is retrieval",
+    "start": 611.519,
+    "duration": 4.481
+  },
+  {
+    "text": "augmented generation. This is how you",
+    "start": 614.0,
+    "duration": 4.72
+  },
+  {
+    "text": "give AI applications access to specific",
+    "start": 616.0,
+    "duration": 4.32
+  },
+  {
+    "text": "knowledge. Whether it's company",
+    "start": 618.72,
+    "duration": 3.6
+  },
+  {
+    "text": "documents, product databases, or",
+    "start": 620.32,
+    "duration": 4.079
+  },
+  {
+    "text": "internal Wikipedia pages. I'm not",
+    "start": 622.32,
+    "duration": 4.32
+  },
+  {
+    "text": "talking about flashy demos. I'm talking",
+    "start": 624.399,
+    "duration": 4.641
+  },
+  {
+    "text": "about reliable systems that work",
+    "start": 626.64,
+    "duration": 4.8
+  },
+  {
+    "text": "consistently over time. So, here is what",
+    "start": 629.04,
+    "duration": 3.84
+  },
+  {
+    "text": "you need to know. Starting with",
+    "start": 631.44,
+    "duration": 3.76
+  },
+  {
+    "text": "chunking, how you split documents",
+    "start": 632.88,
+    "duration": 4.32
+  },
+  {
+    "text": "matters more than people realize.",
+    "start": 635.2,
+    "duration": 3.6
+  },
+  {
+    "text": "Whether it should be paragraphs,",
+    "start": 637.2,
+    "duration": 4.4
+  },
+  {
+    "text": "sentences, fixed token count, should you",
+    "start": 638.8,
+    "duration": 4.96
+  },
+  {
+    "text": "preserve the structure, there is no",
+    "start": 641.6,
+    "duration": 4.32
+  },
+  {
+    "text": "single right answer, but your choice",
+    "start": 643.76,
+    "duration": 3.92
+  },
+  {
+    "text": "dramatically affects the retrieval",
+    "start": 645.92,
+    "duration": 4.24
+  },
+  {
+    "text": "quality. Then we have embeddings. This",
+    "start": 647.68,
+    "duration": 4.88
+  },
+  {
+    "text": "is how text becomes numbers that capture",
+    "start": 650.16,
+    "duration": 4.56
+  },
+  {
+    "text": "meaning. Different embedding models have",
+    "start": 652.56,
+    "duration": 4.08
+  },
+  {
+    "text": "different strengths. Some handle",
+    "start": 654.72,
+    "duration": 4.0
+  },
+  {
+    "text": "semantic similarity better while the",
+    "start": 656.64,
+    "duration": 4.639
+  },
+  {
+    "text": "others handle long passages better. Then",
+    "start": 658.72,
+    "duration": 5.119
+  },
+  {
+    "text": "we have vector databases where you store",
+    "start": 661.279,
+    "duration": 4.56
+  },
+  {
+    "text": "embeddings and search them. Popular",
+    "start": 663.839,
+    "duration": 4.721
+  },
+  {
+    "text": "vector databases are Pine Cone, Vivviet,",
+    "start": 665.839,
+    "duration": 5.12
+  },
+  {
+    "text": "Chroma and Qrand. Now each of them have",
+    "start": 668.56,
+    "duration": 4.48
+  },
+  {
+    "text": "different trade-offs around scale, cost",
+    "start": 670.959,
+    "duration": 4.481
+  },
+  {
+    "text": "and features. Then you have retrieval",
+    "start": 673.04,
+    "duration": 5.2
+  },
+  {
+    "text": "strategies. Simple similarity search is",
+    "start": 675.44,
+    "duration": 5.2
+  },
+  {
+    "text": "just the start. You also have hybrid",
+    "start": 678.24,
+    "duration": 4.64
+  },
+  {
+    "text": "search which combines semantic and",
+    "start": 680.64,
+    "duration": 4.4
+  },
+  {
+    "text": "keyword matching. Then you should learn",
+    "start": 682.88,
+    "duration": 4.8
+  },
+  {
+    "text": "about reanking which uses a second model",
+    "start": 685.04,
+    "duration": 4.799
+  },
+  {
+    "text": "to improve the results of retrieval.",
+    "start": 687.68,
+    "duration": 4.399
+  },
+  {
+    "text": "Then you also have query transformation",
+    "start": 689.839,
+    "duration": 4.24
+  },
+  {
+    "text": "which rewrites the questions to get",
+    "start": 692.079,
+    "duration": 4.0
+  },
+  {
+    "text": "better retrieval. Here is the critical",
+    "start": 694.079,
+    "duration": 4.081
+  },
+  {
+    "text": "insight that you need to know. Most drag",
+    "start": 696.079,
+    "duration": 4.481
+  },
+  {
+    "text": "systems fail because retrieval is weak",
+    "start": 698.16,
+    "duration": 4.799
+  },
+  {
+    "text": "not because the LLM is bad. You feed the",
+    "start": 700.56,
+    "duration": 4.56
+  },
+  {
+    "text": "model with irrelevant context and the",
+    "start": 702.959,
+    "duration": 4.641
+  },
+  {
+    "text": "output suffers no matter how smart the",
+    "start": 705.12,
+    "duration": 4.959
+  },
+  {
+    "text": "model is. So in this particular month I",
+    "start": 707.6,
+    "duration": 4.4
+  },
+  {
+    "text": "want you to build one serious rag",
+    "start": 710.079,
+    "duration": 4.241
+  },
+  {
+    "text": "application end to end. Use data that",
+    "start": 712.0,
+    "duration": 4.24
+  },
+  {
+    "text": "you can find publicly whether it's open",
+    "start": 714.32,
+    "duration": 4.32
+  },
+  {
+    "text": "source documentations, papers, articles",
+    "start": 716.24,
+    "duration": 4.4
+  },
+  {
+    "text": "etc. and then build the complete",
+    "start": 718.64,
+    "duration": 5.52
+  },
+  {
+    "text": "pipeline in chunking embedding storage",
+    "start": 720.64,
+    "duration": 5.84
+  },
+  {
+    "text": "retrieval and generation and then build",
+    "start": 724.16,
+    "duration": 4.0
+  },
+  {
+    "text": "an interface where people can actually",
+    "start": 726.48,
+    "duration": 3.919
+  },
+  {
+    "text": "go and use it. Here is what will set you",
+    "start": 728.16,
+    "duration": 4.88
+  },
+  {
+    "text": "apart. Evaluation. Most people have no",
+    "start": 730.399,
+    "duration": 4.641
+  },
+  {
+    "text": "idea if their rag system actually works",
+    "start": 733.04,
+    "duration": 4.479
+  },
+  {
+    "text": "well. Even basic evaluation puts you",
+    "start": 735.04,
+    "duration": 4.72
+  },
+  {
+    "text": "ahead. So create a test set with",
+    "start": 737.519,
+    "duration": 4.161
+  },
+  {
+    "text": "questions where you know the answers and",
+    "start": 739.76,
+    "duration": 3.759
+  },
+  {
+    "text": "which documents should be retrieved.",
+    "start": 741.68,
+    "duration": 3.36
+  },
+  {
+    "text": "Measure whether you're retrieving the",
+    "start": 743.519,
+    "duration": 3.44
+  },
+  {
+    "text": "right documents or not. Measure the",
+    "start": 745.04,
+    "duration": 4.239
+  },
+  {
+    "text": "answer accuracy and track these metrics",
+    "start": 746.959,
+    "duration": 4.801
+  },
+  {
+    "text": "as you make changes. This evaluation",
+    "start": 749.279,
+    "duration": 4.8
+  },
+  {
+    "text": "mindset is incredibly valuable and",
+    "start": 751.76,
+    "duration": 4.639
+  },
+  {
+    "text": "surprisingly rare. Then month four is",
+    "start": 754.079,
+    "duration": 3.76
+  },
+  {
+    "text": "where things get very interesting",
+    "start": 756.399,
+    "duration": 3.841
+  },
+  {
+    "text": "because we have agents. Agents are AI",
+    "start": 757.839,
+    "duration": 4.481
+  },
+  {
+    "text": "systems that take multiple steps to",
+    "start": 760.24,
+    "duration": 4.32
+  },
+  {
+    "text": "accomplish goals, which is deciding what",
+    "start": 762.32,
+    "duration": 4.48
+  },
+  {
+    "text": "actions to take along the way. Instead",
+    "start": 764.56,
+    "duration": 4.88
+  },
+  {
+    "text": "of just responding to a single query, an",
+    "start": 766.8,
+    "duration": 5.039
+  },
+  {
+    "text": "agent might search for an information,",
+    "start": 769.44,
+    "duration": 4.8
+  },
+  {
+    "text": "analyze what it found, realize that it",
+    "start": 771.839,
+    "duration": 4.641
+  },
+  {
+    "text": "might need more, so search again, and",
+    "start": 774.24,
+    "duration": 3.839
+  },
+  {
+    "text": "then synthesize everything, and then",
+    "start": 776.48,
+    "duration": 3.44
+  },
+  {
+    "text": "finally respond to the user. This is",
+    "start": 778.079,
+    "duration": 4.481
+  },
+  {
+    "text": "where AI engineering starts to feel like",
+    "start": 779.92,
+    "duration": 5.039
+  },
+  {
+    "text": "building genuinely intelligent systems.",
+    "start": 782.56,
+    "duration": 4.0
+  },
+  {
+    "text": "So this is where you need to understand",
+    "start": 784.959,
+    "duration": 4.161
+  },
+  {
+    "text": "the core agent loop. The observe state,",
+    "start": 786.56,
+    "duration": 5.36
+  },
+  {
+    "text": "decide on an action, execute, observe",
+    "start": 789.12,
+    "duration": 5.04
+  },
+  {
+    "text": "the result and repeat until done. Then",
+    "start": 791.92,
+    "duration": 4.719
+  },
+  {
+    "text": "secondly, understand planning. How do",
+    "start": 794.16,
+    "duration": 5.2
+  },
+  {
+    "text": "agents break down complex tasks? Here we",
+    "start": 796.639,
+    "duration": 4.88
+  },
+  {
+    "text": "have different approaches. One is chain",
+    "start": 799.36,
+    "duration": 4.08
+  },
+  {
+    "text": "of thought, then the other is tree of",
+    "start": 801.519,
+    "duration": 3.361
+  },
+  {
+    "text": "thought along with other planning",
+    "start": 803.44,
+    "duration": 3.519
+  },
+  {
+    "text": "frameworks. And third, understand",
+    "start": 804.88,
+    "duration": 4.959
+  },
+  {
+    "text": "memory. Short-term memory within a task,",
+    "start": 806.959,
+    "duration": 5.281
+  },
+  {
+    "text": "long-term memory across sections. How do",
+    "start": 809.839,
+    "duration": 4.24
+  },
+  {
+    "text": "you actually implement these? Then",
+    "start": 812.24,
+    "duration": 4.399
+  },
+  {
+    "text": "fourth thing, understand error handling.",
+    "start": 814.079,
+    "duration": 5.521
+  },
+  {
+    "text": "Agents do fail a lot. APIs often error",
+    "start": 816.639,
+    "duration": 5.681
+  },
+  {
+    "text": "out. Tools return unexpected results.",
+    "start": 819.6,
+    "duration": 4.96
+  },
+  {
+    "text": "Agents go down wrong paths. So you need",
+    "start": 822.32,
+    "duration": 4.0
+  },
+  {
+    "text": "to understand all of this. So this",
+    "start": 824.56,
+    "duration": 3.36
+  },
+  {
+    "text": "particular month, what I want you to",
+    "start": 826.32,
+    "duration": 3.68
+  },
+  {
+    "text": "build is build an AI agent that",
+    "start": 827.92,
+    "duration": 4.96
+  },
+  {
+    "text": "accomplishes a real multi-step task.",
+    "start": 830.0,
+    "duration": 5.12
+  },
+  {
+    "text": "Maybe a research agent that takes a",
+    "start": 832.88,
+    "duration": 4.0
+  },
+  {
+    "text": "question, searches through multiple",
+    "start": 835.12,
+    "duration": 4.24
+  },
+  {
+    "text": "sources, synthesizes what it found, and",
+    "start": 836.88,
+    "duration": 4.8
+  },
+  {
+    "text": "produces a final result. making",
+    "start": 839.36,
+    "duration": 4.4
+  },
+  {
+    "text": "decisions about what to search based on",
+    "start": 841.68,
+    "duration": 4.399
+  },
+  {
+    "text": "what it's discovering. Or you can build",
+    "start": 843.76,
+    "duration": 4.56
+  },
+  {
+    "text": "a coding agent that reads a code",
+    "start": 846.079,
+    "duration": 4.56
+  },
+  {
+    "text": "database, understands the functions,",
+    "start": 848.32,
+    "duration": 4.24
+  },
+  {
+    "text": "makes the changes, and verifies the",
+    "start": 850.639,
+    "duration": 3.841
+  },
+  {
+    "text": "work. Or you can even build a data",
+    "start": 852.56,
+    "duration": 4.399
+  },
+  {
+    "text": "analysis agent that examines a data set,",
+    "start": 854.48,
+    "duration": 4.799
+  },
+  {
+    "text": "decides what to ask, and runs analysis,",
+    "start": 856.959,
+    "duration": 4.24
+  },
+  {
+    "text": "and then finally presents the finding.",
+    "start": 859.279,
+    "duration": 4.321
+  },
+  {
+    "text": "The specific domain matters less than",
+    "start": 861.199,
+    "duration": 4.08
+  },
+  {
+    "text": "building something that genuinely",
+    "start": 863.6,
+    "duration": 3.76
+  },
+  {
+    "text": "reasons through multiple steps. Through",
+    "start": 865.279,
+    "duration": 4.0
+  },
+  {
+    "text": "this process, you'll learn that agents",
+    "start": 867.36,
+    "duration": 4.719
+  },
+  {
+    "text": "are expensive. Each step involves LLM",
+    "start": 869.279,
+    "duration": 6.321
+  },
+  {
+    "text": "calls. 10 step might cost 10x what a",
+    "start": 872.079,
+    "duration": 6.081
+  },
+  {
+    "text": "single turn application costs. Then you",
+    "start": 875.6,
+    "duration": 4.88
+  },
+  {
+    "text": "learn that agents are slow. Multiple",
+    "start": 878.16,
+    "duration": 4.88
+  },
+  {
+    "text": "round trips actually add up on time. So",
+    "start": 880.48,
+    "duration": 4.64
+  },
+  {
+    "text": "think about user experience. Streaming",
+    "start": 883.04,
+    "duration": 4.479
+  },
+  {
+    "text": "progress and showing what's happening.",
+    "start": 885.12,
+    "duration": 4.959
+  },
+  {
+    "text": "Then agents are unpredictable with the",
+    "start": 887.519,
+    "duration": 5.12
+  },
+  {
+    "text": "same input, different parts. Testing is",
+    "start": 890.079,
+    "duration": 5.361
+  },
+  {
+    "text": "hard. You need observability. You need",
+    "start": 892.639,
+    "duration": 5.2
+  },
+  {
+    "text": "logging what the agent does and why.",
+    "start": 895.44,
+    "duration": 4.48
+  },
+  {
+    "text": "Simpler agents are usually better. So",
+    "start": 897.839,
+    "duration": 4.321
+  },
+  {
+    "text": "before building a complex agent, ask",
+    "start": 899.92,
+    "duration": 4.479
+  },
+  {
+    "text": "yourself if a simple chain or even a",
+    "start": 902.16,
+    "duration": 4.32
+  },
+  {
+    "text": "single prompt could work. Then in month",
+    "start": 904.399,
+    "duration": 4.081
+  },
+  {
+    "text": "five, we're going to focus on deployment",
+    "start": 906.48,
+    "duration": 4.24
+  },
+  {
+    "text": "and production. This is going to be your",
+    "start": 908.48,
+    "duration": 4.24
+  },
+  {
+    "text": "biggest edge because this is where most",
+    "start": 910.72,
+    "duration": 3.919
+  },
+  {
+    "text": "people stop learning. So projects",
+    "start": 912.72,
+    "duration": 4.479
+  },
+  {
+    "text": "running only on your laptop create zero",
+    "start": 914.639,
+    "duration": 4.801
+  },
+  {
+    "text": "business value. A deployed system that",
+    "start": 917.199,
+    "duration": 4.241
+  },
+  {
+    "text": "real users can use and is running",
+    "start": 919.44,
+    "duration": 4.399
+  },
+  {
+    "text": "reliably is what is very important. So I",
+    "start": 921.44,
+    "duration": 4.24
+  },
+  {
+    "text": "would highly recommend you learn fast",
+    "start": 923.839,
+    "duration": 4.321
+  },
+  {
+    "text": "API for building APIs. It is the",
+    "start": 925.68,
+    "duration": 4.8
+  },
+  {
+    "text": "standard for AI deployments. Then I",
+    "start": 928.16,
+    "duration": 3.84
+  },
+  {
+    "text": "would say learn Docker for",
+    "start": 930.48,
+    "duration": 4.08
+  },
+  {
+    "text": "containerization. Your app that runs",
+    "start": 932.0,
+    "duration": 4.72
+  },
+  {
+    "text": "everywhere is what is reliable. Then",
+    "start": 934.56,
+    "duration": 4.48
+  },
+  {
+    "text": "learn basic cloud deployment. You can",
+    "start": 936.72,
+    "duration": 5.76
+  },
+  {
+    "text": "use tools like railway render or fly IO.",
+    "start": 939.04,
+    "duration": 5.919
+  },
+  {
+    "text": "It makes it easy without having DevOp",
+    "start": 942.48,
+    "duration": 5.359
+  },
+  {
+    "text": "experience. Then take your rag system or",
+    "start": 944.959,
+    "duration": 4.721
+  },
+  {
+    "text": "agent from the previous months and just",
+    "start": 947.839,
+    "duration": 3.92
+  },
+  {
+    "text": "deploy it. You can add logging and",
+    "start": 949.68,
+    "duration": 4.0
+  },
+  {
+    "text": "observability. For example, what",
+    "start": 951.759,
+    "duration": 4.561
+  },
+  {
+    "text": "requests are coming in? what's the LLM",
+    "start": 953.68,
+    "duration": 4.88
+  },
+  {
+    "text": "generating? Can you debug when the",
+    "start": 956.32,
+    "duration": 4.4
+  },
+  {
+    "text": "things break? So use tools like",
+    "start": 958.56,
+    "duration": 4.32
+  },
+  {
+    "text": "Langsmith, Langfuse or even just",
+    "start": 960.72,
+    "duration": 3.84
+  },
+  {
+    "text": "structured looping which gives you",
+    "start": 962.88,
+    "duration": 3.84
+  },
+  {
+    "text": "visibility. Then I would say get into",
+    "start": 964.56,
+    "duration": 4.48
+  },
+  {
+    "text": "latency monitoring. How long are",
+    "start": 966.72,
+    "duration": 4.08
+  },
+  {
+    "text": "requests taking? Where are the",
+    "start": 969.04,
+    "duration": 3.76
+  },
+  {
+    "text": "bottlenecks? Then I would say get into",
+    "start": 970.8,
+    "duration": 3.92
+  },
+  {
+    "text": "cost tracking. How much are you paying",
+    "start": 972.8,
+    "duration": 4.159
+  },
+  {
+    "text": "per request? How much are you paying per",
+    "start": 974.72,
+    "duration": 4.64
+  },
+  {
+    "text": "day? How much are you paying per user?",
+    "start": 976.959,
+    "duration": 4.88
+  },
+  {
+    "text": "Then look into error handling. What",
+    "start": 979.36,
+    "duration": 5.12
+  },
+  {
+    "text": "happens when LLM APIs time out? When do",
+    "start": 981.839,
+    "duration": 5.521
+  },
+  {
+    "text": "rate limits hit? When do models return",
+    "start": 984.48,
+    "duration": 5.279
+  },
+  {
+    "text": "garbage? Handle these things gracefully.",
+    "start": 987.36,
+    "duration": 5.12
+  },
+  {
+    "text": "Then look into caching. If someone asks",
+    "start": 989.759,
+    "duration": 5.281
+  },
+  {
+    "text": "the same question twice, maybe skip the",
+    "start": 992.48,
+    "duration": 5.76
+  },
+  {
+    "text": "LLM call entirely. This dramatically",
+    "start": 995.04,
+    "duration": 5.919
+  },
+  {
+    "text": "reduces cost and latency. So here are",
+    "start": 998.24,
+    "duration": 4.8
+  },
+  {
+    "text": "some practical tips. Start with the",
+    "start": 1000.959,
+    "duration": 4.721
+  },
+  {
+    "text": "simplest deployment that works. Use",
+    "start": 1003.04,
+    "duration": 5.2
+  },
+  {
+    "text": "environment variables for API keys and",
+    "start": 1005.68,
+    "duration": 5.04
+  },
+  {
+    "text": "never hardcode your secrets. Always set",
+    "start": 1008.24,
+    "duration": 4.24
+  },
+  {
+    "text": "up for health checks and always set up",
+    "start": 1010.72,
+    "duration": 4.08
+  },
+  {
+    "text": "for basic alerting. This production",
+    "start": 1012.48,
+    "duration": 5.039
+  },
+  {
+    "text": "mindset is what hiring managers mean by",
+    "start": 1014.8,
+    "duration": 4.64
+  },
+  {
+    "text": "experience. It is not about the number",
+    "start": 1017.519,
+    "duration": 3.68
+  },
+  {
+    "text": "of years you've worked at a company. It",
+    "start": 1019.44,
+    "duration": 3.6
+  },
+  {
+    "text": "is about your experience in building",
+    "start": 1021.199,
+    "duration": 4.161
+  },
+  {
+    "text": "production level systems. Then in month",
+    "start": 1023.04,
+    "duration": 4.48
+  },
+  {
+    "text": "six, it is time to specialize and",
+    "start": 1025.36,
+    "duration": 4.719
+  },
+  {
+    "text": "prepare for your interviews. I would say",
+    "start": 1027.52,
+    "duration": 4.559
+  },
+  {
+    "text": "at this point, you need to stop being a",
+    "start": 1030.079,
+    "duration": 5.12
+  },
+  {
+    "text": "generalist. Look at real AI engineer job",
+    "start": 1032.079,
+    "duration": 5.12
+  },
+  {
+    "text": "descriptions. What are the skills that",
+    "start": 1035.199,
+    "duration": 4.161
+  },
+  {
+    "text": "keep appearing? What are the tools that",
+    "start": 1037.199,
+    "duration": 4.401
+  },
+  {
+    "text": "keep appearing? What kind of projects",
+    "start": 1039.36,
+    "duration": 4.24
+  },
+  {
+    "text": "are they requiring from you? Pick a",
+    "start": 1041.6,
+    "duration": 3.92
+  },
+  {
+    "text": "direction based on your interest.",
+    "start": 1043.6,
+    "duration": 3.76
+  },
+  {
+    "text": "Whether it's userfacing AI products",
+    "start": 1045.52,
+    "duration": 3.76
+  },
+  {
+    "text": "which focuses on application development",
+    "start": 1047.36,
+    "duration": 4.64
+  },
+  {
+    "text": "and great user experience or if it's",
+    "start": 1049.28,
+    "duration": 5.04
+  },
+  {
+    "text": "infrastructure which involves deployment",
+    "start": 1052.0,
+    "duration": 5.679
+  },
+  {
+    "text": "scaling ML ops for LLM applications or",
+    "start": 1054.32,
+    "duration": 5.599
+  },
+  {
+    "text": "if it's agents and autonomous systems",
+    "start": 1057.679,
+    "duration": 4.321
+  },
+  {
+    "text": "which has complex architectures and",
+    "start": 1059.919,
+    "duration": 4.64
+  },
+  {
+    "text": "cuttingedge patterns or it could be in",
+    "start": 1062.0,
+    "duration": 3.919
+  },
+  {
+    "text": "open-source models where you're",
+    "start": 1064.559,
+    "duration": 4.161
+  },
+  {
+    "text": "fine-tuning using Laura quantization and",
+    "start": 1065.919,
+    "duration": 5.361
+  },
+  {
+    "text": "optimization. I would say build one",
+    "start": 1068.72,
+    "duration": 4.72
+  },
+  {
+    "text": "capstone project you can walk through",
+    "start": 1071.28,
+    "duration": 4.56
+  },
+  {
+    "text": "confidently in these interviews. You can",
+    "start": 1073.44,
+    "duration": 5.119
+  },
+  {
+    "text": "also combine multiple skills. You can",
+    "start": 1075.84,
+    "duration": 5.36
+  },
+  {
+    "text": "combine rag with agents deployment and",
+    "start": 1078.559,
+    "duration": 5.041
+  },
+  {
+    "text": "evaluation. Prepare your explanations",
+    "start": 1081.2,
+    "duration": 4.64
+  },
+  {
+    "text": "properly. Interviewers want to",
+    "start": 1083.6,
+    "duration": 4.56
+  },
+  {
+    "text": "understand how you think, why this",
+    "start": 1085.84,
+    "duration": 4.32
+  },
+  {
+    "text": "problem, why this approach, what",
+    "start": 1088.16,
+    "duration": 4.32
+  },
+  {
+    "text": "trade-offs did you make, what broke and",
+    "start": 1090.16,
+    "duration": 4.48
+  },
+  {
+    "text": "how did you fix it, what would you do",
+    "start": 1092.48,
+    "duration": 4.0
+  },
+  {
+    "text": "differently. And the other thing I",
+    "start": 1094.64,
+    "duration": 3.919
+  },
+  {
+    "text": "highly recommend people to do is build",
+    "start": 1096.48,
+    "duration": 4.88
+  },
+  {
+    "text": "in public. If you are building portfolio",
+    "start": 1098.559,
+    "duration": 4.48
+  },
+  {
+    "text": "projects, share that on LinkedIn,",
+    "start": 1101.36,
+    "duration": 3.6
+  },
+  {
+    "text": "Twitter, GitHub, Substack, wherever",
+    "start": 1103.039,
+    "duration": 3.841
+  },
+  {
+    "text": "you're comfortable. Write about what",
+    "start": 1104.96,
+    "duration": 3.76
+  },
+  {
+    "text": "you're learning and visibility",
+    "start": 1106.88,
+    "duration": 4.159
+  },
+  {
+    "text": "definitely creates opportunities. So you",
+    "start": 1108.72,
+    "duration": 4.24
+  },
+  {
+    "text": "need to do that. So let me leave you",
+    "start": 1111.039,
+    "duration": 4.321
+  },
+  {
+    "text": "with this. AI engineering is genuinely",
+    "start": 1112.96,
+    "duration": 4.32
+  },
+  {
+    "text": "new and the playbook is still being",
+    "start": 1115.36,
+    "duration": 3.92
+  },
+  {
+    "text": "written. That is scary, but it is also",
+    "start": 1117.28,
+    "duration": 4.639
+  },
+  {
+    "text": "exciting. The barriers to entry are low",
+    "start": 1119.28,
+    "duration": 4.72
+  },
+  {
+    "text": "than traditional engineering. You don't",
+    "start": 1121.919,
+    "duration": 4.88
+  },
+  {
+    "text": "need a CS degree. You just need to build",
+    "start": 1124.0,
+    "duration": 5.36
+  },
+  {
+    "text": "things that work. This field rewards",
+    "start": 1126.799,
+    "duration": 5.281
+  },
+  {
+    "text": "builders over studers. You can watch",
+    "start": 1129.36,
+    "duration": 5.439
+  },
+  {
+    "text": "tutorials forever, but none of it would",
+    "start": 1132.08,
+    "duration": 5.28
+  },
+  {
+    "text": "matter if you are not building. Every",
+    "start": 1134.799,
+    "duration": 5.041
+  },
+  {
+    "text": "project teaches you things that reading",
+    "start": 1137.36,
+    "duration": 4.48
+  },
+  {
+    "text": "never will. Resources are in the",
+    "start": 1139.84,
+    "duration": 4.079
+  },
+  {
+    "text": "description below, organized by months.",
+    "start": 1141.84,
+    "duration": 3.92
+  },
+  {
+    "text": "If this helped, please do subscribe for",
+    "start": 1143.919,
+    "duration": 3.521
+  },
+  {
+    "text": "my channel for more AI engineering",
+    "start": 1145.76,
+    "duration": 3.84
+  },
+  {
+    "text": "content. And drop a comment below. Where",
+    "start": 1147.44,
+    "duration": 4.0
+  },
+  {
+    "text": "are you starting from and what should I",
+    "start": 1149.6,
+    "duration": 3.52
+  },
+  {
+    "text": "go deeper on? I'll see you in the next",
+    "start": 1151.44,
+    "duration": 4.0
+  },
+  {
+    "text": "one.",
+    "start": 1153.12,
+    "duration": 2.32
+  }
+]

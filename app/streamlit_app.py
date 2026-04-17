@@ -17,6 +17,7 @@ import streamlit as st
 from app.components.sidebar import render_sidebar
 from app.components.chat import (
     render_chat_history,
+    render_dual_comparison,
     add_user_message,
     add_assistant_message,
 )
@@ -26,6 +27,7 @@ from src.embedding.embedder import Embedder
 from src.vectorstore.faiss_store import FAISSStore
 from src.transcript.fetcher import extract_video_id, TranscriptFetchError
 from src.generation.llm import LLMConnectionError
+from app.utils import log_preference
 
 
 # ─────────────────────────────────────────────
@@ -161,12 +163,14 @@ if "query_pipeline" not in st.session_state:
     st.session_state.query_pipeline = None
 if "ingest_info" not in st.session_state:
     st.session_state.ingest_info = None
+if "pending_dual" not in st.session_state:
+    st.session_state.pending_dual = None
 
 
 # ─────────────────────────────────────────────
 # Sidebar
 # ─────────────────────────────────────────────
-video_url, config, ingest_clicked = render_sidebar()
+video_url, config, ingest_clicked, prompt_style = render_sidebar()
 
 
 # ─────────────────────────────────────────────
@@ -293,39 +297,81 @@ if st.session_state.current_video_id:
         unsafe_allow_html=True,
     )
 
+    # Warn if second model is unavailable
+    pipeline = st.session_state.query_pipeline
+    if pipeline and pipeline.secondary_chain is None:
+        st.warning(
+            f"Second model **{pipeline._secondary_model_key}** is not available in Ollama. "
+            f"Run `ollama pull {pipeline._secondary_model_key}` to enable dual-model comparison. "
+            f"Falling back to single-model mode.",
+            icon="⚠️",
+        )
+
     # Render chat history
     render_chat_history()
 
-    # Chat input
-    if prompt := st.chat_input("Ask a question about the video..."):
-        # Add and display user message
+    # ── Dual-model comparison (pending selection) ──
+    if st.session_state.pending_dual is not None:
+        pending = st.session_state.pending_dual
+        selected_answer = render_dual_comparison(pending)
+
+        if selected_answer is not None:
+            if selected_answer == pending["primary"]["answer"]:
+                selected = pending["primary"]
+                loser_model = pending["secondary"]["model"]
+            else:
+                selected = pending["secondary"]
+                loser_model = pending["primary"]["model"]
+
+            log_preference(
+                winner=selected["model"],
+                loser=loser_model,
+                question=pending["question"],
+                video_id=st.session_state.current_video_id or "",
+            )
+            pipeline.commit_dual_selection(pending["question"], selected_answer)
+            add_assistant_message(
+                selected_answer,
+                selected["sources"],
+                confidence=selected.get("confidence"),
+                sentence_scores=selected.get("sentence_scores", []),
+            )
+            st.session_state.pending_dual = None
+            st.rerun()
+
+    # Chat input (disabled while awaiting selection)
+    elif prompt := st.chat_input("Ask a question about the video..."):
         add_user_message(prompt)
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Generate response
-        with st.chat_message("assistant"):
+        if pipeline is None:
+            st.error("Pipeline not initialized. Please ingest a video first.")
+        elif pipeline.secondary_chain is None:
+            # Fallback: single-model response
             with st.spinner("Thinking..."):
                 try:
-                    pipeline = st.session_state.query_pipeline
-
-                    if pipeline is None:
-                        st.error("Pipeline not initialized. Please ingest a video first.")
-                    else:
-                        result = pipeline.ask(prompt)
-                        answer = result.get("answer", "I couldn't generate a response.")
-                        sources = result.get("sources", [])
-
-                        st.markdown(answer)
-
-                        # Render citations
-                        from app.components.chat import render_citations
+                    result = pipeline.ask(prompt, prompt_style=prompt_style)
+                    answer = result.get("answer", "I couldn't generate a response.")
+                    sources = result.get("sources", [])
+                    confidence = result.get("confidence")
+                    sentence_scores = result.get("sentence_scores", [])
+                    with st.chat_message("assistant"):
+                        from app.components.chat import render_highlighted_answer, render_confidence, render_citations
+                        if sentence_scores:
+                            render_highlighted_answer(sentence_scores)
+                        else:
+                            st.markdown(answer)
+                        render_confidence(confidence)
                         render_citations(sources)
-
-                        # Save to history
-                        add_assistant_message(answer, sources)
-
+                    add_assistant_message(answer, sources, confidence, sentence_scores)
                 except Exception as e:
-                    error_msg = f"Error generating response: {e}"
-                    st.error(error_msg)
-                    add_assistant_message(error_msg)
+                    st.error(f"Error generating response: {e}")
+        else:
+            with st.spinner("Generating responses from both models..."):
+                try:
+                    dual_result = pipeline.ask_dual(prompt, prompt_style=prompt_style)
+                    st.session_state.pending_dual = dual_result
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Error generating response: {e}")

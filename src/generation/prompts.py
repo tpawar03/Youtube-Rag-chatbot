@@ -9,34 +9,82 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 
 # ──────────────────────────────────────────────
-# System prompt — enforces grounded answers
+# Confidence instruction appended to every style
 # ──────────────────────────────────────────────
-SYSTEM_PROMPT = """You are a helpful assistant that answers questions about YouTube video content.
-
-RULES:
-1. You must answer ONLY based on the provided transcript context below.
-2. If the context does not contain enough information to answer the question, say: "I don't have enough information from the video to answer that."
-3. Do NOT make up facts, statistics, or claims that are not explicitly stated in the context.
-4. Always cite the timestamp range(s) where you found the information, formatted as [MM:SS - MM:SS].
-5. Be concise and direct. Synthesize information from multiple chunks when relevant.
-6. If the user asks a follow-up question, use the conversation history to understand what they're referring to.
-
-TRANSCRIPT CONTEXT:
-{context}
-"""
+_CONFIDENCE_INSTRUCTION = (
+    "\n\nAfter your answer, on a NEW LINE write exactly this (replace X with a number 1-5):\n"
+    "CONFIDENCE: X/5\n"
+    "where 1 = very uncertain, 5 = very confident the context fully supports your answer."
+)
 
 # ──────────────────────────────────────────────
-# Prompt templates
+# System prompts — one per style
+# ──────────────────────────────────────────────
+_BASE_RULES = (
+    "1. Answer ONLY based on the provided transcript context.\n"
+    "2. If the context lacks enough information say: \"I don't have enough information from the video to answer that.\"\n"
+    "3. Do NOT make up facts not explicitly stated in the context.\n"
+    "4. Cite timestamp ranges where you found the information as [MM:SS - MM:SS].\n"
+    "5. Use conversation history to understand follow-up questions."
+)
+
+SYSTEM_PROMPTS = {
+    "default": (
+        "You are a helpful assistant that answers questions about YouTube video content.\n\n"
+        "RULES:\n" + _BASE_RULES + "\n6. Be concise and direct.\n\n"
+        "TRANSCRIPT CONTEXT:\n{context}" + _CONFIDENCE_INSTRUCTION
+    ),
+    "concise": (
+        "You are a concise assistant answering questions about a YouTube video. "
+        "Keep answers to 2-3 sentences maximum. Cut all filler — only state facts.\n\n"
+        "RULES:\n" + _BASE_RULES + "\n6. Never exceed 3 sentences.\n\n"
+        "TRANSCRIPT CONTEXT:\n{context}" + _CONFIDENCE_INSTRUCTION
+    ),
+    "detailed": (
+        "You are a thorough assistant answering questions about a YouTube video. "
+        "Provide comprehensive, well-structured answers with full context and examples from the transcript.\n\n"
+        "RULES:\n" + _BASE_RULES + "\n6. Use bullet points or numbered lists for multi-part answers.\n"
+        "7. Explain the *why* and *how* behind each point.\n\n"
+        "TRANSCRIPT CONTEXT:\n{context}" + _CONFIDENCE_INSTRUCTION
+    ),
+    "eli5": (
+        "You are a friendly assistant explaining YouTube video content as if talking to a curious 10-year-old. "
+        "Use simple words, fun analogies, and short sentences. Avoid jargon.\n\n"
+        "RULES:\n" + _BASE_RULES + "\n6. Use analogies and real-world comparisons.\n"
+        "7. Keep sentences short and vocabulary simple.\n\n"
+        "TRANSCRIPT CONTEXT:\n{context}" + _CONFIDENCE_INSTRUCTION
+    ),
+}
+
+PROMPT_STYLE_LABELS = {
+    "default": "Default",
+    "concise": "Concise",
+    "detailed": "Detailed",
+    "eli5": "ELI5 (Simple)",
+}
+
+# ──────────────────────────────────────────────
+# Prompt template builder
 # ──────────────────────────────────────────────
 
-# For the conversational RAG chain
-CONVERSATIONAL_PROMPT = ChatPromptTemplate.from_messages([
-    ("system", SYSTEM_PROMPT),
-    MessagesPlaceholder("chat_history"),
-    ("human", "{question}"),
-])
+def get_conversational_prompt(style: str = "default") -> ChatPromptTemplate:
+    """Return the ChatPromptTemplate for the given style."""
+    system = SYSTEM_PROMPTS.get(style, SYSTEM_PROMPTS["default"])
+    return ChatPromptTemplate.from_messages([
+        ("system", system),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{question}"),
+    ])
 
-# For standalone question generation (condenses follow-up into standalone)
+
+# Default prompt (kept for backward compatibility)
+SYSTEM_PROMPT = SYSTEM_PROMPTS["default"]
+CONVERSATIONAL_PROMPT = get_conversational_prompt("default")
+
+# ──────────────────────────────────────────────
+# Other prompts
+# ──────────────────────────────────────────────
+
 CONDENSE_PROMPT = ChatPromptTemplate.from_messages([
     ("system",
      "Given the following conversation and a follow-up question, "
@@ -47,7 +95,6 @@ CONDENSE_PROMPT = ChatPromptTemplate.from_messages([
     ("human", "{question}"),
 ])
 
-# Simple single-turn QA prompt (for evaluation)
 SIMPLE_QA_PROMPT = ChatPromptTemplate.from_messages([
     ("system", SYSTEM_PROMPT),
     ("human", "{question}"),

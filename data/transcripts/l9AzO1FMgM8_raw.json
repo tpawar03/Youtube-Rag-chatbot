@@ -1,0 +1,352 @@
+[
+  {
+    "text": "Java a highlevel multi-paradigm",
+    "start": 0.199,
+    "duration": 3.841
+  },
+  {
+    "text": "programming language famous for its",
+    "start": 2.44,
+    "duration": 3.6
+  },
+  {
+    "text": "ability to compile to platform",
+    "start": 4.04,
+    "duration": 4.24
+  },
+  {
+    "text": "independent B code it was designed by",
+    "start": 6.04,
+    "duration": 4.679
+  },
+  {
+    "text": "James Gosling in 1990 at Sun",
+    "start": 8.28,
+    "duration": 3.88
+  },
+  {
+    "text": "Microsystems one of its first",
+    "start": 10.719,
+    "duration": 4.201
+  },
+  {
+    "text": "demonstrations was the star 7 PDA which",
+    "start": 12.16,
+    "duration": 5.44
+  },
+  {
+    "text": "gave birth to the Java mascot Duke today",
+    "start": 14.92,
+    "duration": 4.16
+  },
+  {
+    "text": "it's one of the world's most popular",
+    "start": 17.6,
+    "duration": 3.04
+  },
+  {
+    "text": "programming languages it Powers",
+    "start": 19.08,
+    "duration": 2.92
+  },
+  {
+    "text": "Enterprise web apps with spring",
+    "start": 20.64,
+    "duration": 3.6
+  },
+  {
+    "text": "framework Big Data pipelines with Hadoop",
+    "start": 22.0,
+    "duration": 4.24
+  },
+  {
+    "text": "mobile apps on Android and even things",
+    "start": 24.24,
+    "duration": 4.24
+  },
+  {
+    "text": "like the controller for NASA's Maestro",
+    "start": 26.24,
+    "duration": 4.48
+  },
+  {
+    "text": "Mars Rover what made jav but Innovative",
+    "start": 28.48,
+    "duration": 4.0
+  },
+  {
+    "text": "is that instead of compiling to machine",
+    "start": 30.72,
+    "duration": 4.76
+  },
+  {
+    "text": "code like C or C++ it compiles to bik",
+    "start": 32.48,
+    "duration": 4.919
+  },
+  {
+    "text": "code that can run on any operating",
+    "start": 35.48,
+    "duration": 4.12
+  },
+  {
+    "text": "system without recompiling which is made",
+    "start": 37.399,
+    "duration": 4.241
+  },
+  {
+    "text": "possible by executing the code with the",
+    "start": 39.6,
+    "duration": 4.84
+  },
+  {
+    "text": "Java virtual machine or jvm it's both a",
+    "start": 41.64,
+    "duration": 4.759
+  },
+  {
+    "text": "compiled and interpreted language at the",
+    "start": 44.44,
+    "duration": 3.72
+  },
+  {
+    "text": "same time the computer just needs to",
+    "start": 46.399,
+    "duration": 4.441
+  },
+  {
+    "text": "have the Java runtime environment or JRE",
+    "start": 48.16,
+    "duration": 4.48
+  },
+  {
+    "text": "installed and most of them do for",
+    "start": 50.84,
+    "duration": 3.92
+  },
+  {
+    "text": "developers this means right once run",
+    "start": 52.64,
+    "duration": 4.239
+  },
+  {
+    "text": "anywhere it's a strongly typed language",
+    "start": 54.76,
+    "duration": 4.479
+  },
+  {
+    "text": "with a curly bra syntax similar to the C",
+    "start": 56.879,
+    "duration": 4.281
+  },
+  {
+    "text": "family how however it provides more",
+    "start": 59.239,
+    "duration": 3.561
+  },
+  {
+    "text": "highlevel features like garbage",
+    "start": 61.16,
+    "duration": 3.92
+  },
+  {
+    "text": "collection runtime type checking and",
+    "start": 62.8,
+    "duration": 4.4
+  },
+  {
+    "text": "reflection to get started install the",
+    "start": 65.08,
+    "duration": 4.76
+  },
+  {
+    "text": "Java development kit or jdk then create",
+    "start": 67.2,
+    "duration": 5.36
+  },
+  {
+    "text": "a file ending in Java every Java program",
+    "start": 69.84,
+    "duration": 4.52
+  },
+  {
+    "text": "starts with a class name which should",
+    "start": 72.56,
+    "duration": 3.919
+  },
+  {
+    "text": "also match the file name the class is",
+    "start": 74.36,
+    "duration": 4.079
+  },
+  {
+    "text": "required to have a main method this is",
+    "start": 76.479,
+    "duration": 3.881
+  },
+  {
+    "text": "where your code will start executing",
+    "start": 78.439,
+    "duration": 4.0
+  },
+  {
+    "text": "inside the method Define a variable by",
+    "start": 80.36,
+    "duration": 4.2
+  },
+  {
+    "text": "starting with a type followed by a name",
+    "start": 82.439,
+    "duration": 3.921
+  },
+  {
+    "text": "and value we can then print it to the",
+    "start": 84.56,
+    "duration": 3.68
+  },
+  {
+    "text": "standard output using the built-in",
+    "start": 86.36,
+    "duration": 3.56
+  },
+  {
+    "text": "system class now because we're inside",
+    "start": 88.24,
+    "duration": 3.879
+  },
+  {
+    "text": "inside of a class we Define functions as",
+    "start": 89.92,
+    "duration": 4.44
+  },
+  {
+    "text": "methods on this class the public keyword",
+    "start": 92.119,
+    "duration": 3.761
+  },
+  {
+    "text": "means that it can be used outside of",
+    "start": 94.36,
+    "duration": 3.6
+  },
+  {
+    "text": "this class and static means that it's a",
+    "start": 95.88,
+    "duration": 4.279
+  },
+  {
+    "text": "member of the class itself as opposed to",
+    "start": 97.96,
+    "duration": 4.24
+  },
+  {
+    "text": "an instance of the class we then provide",
+    "start": 100.159,
+    "duration": 4.361
+  },
+  {
+    "text": "a type and name and return a value from",
+    "start": 102.2,
+    "duration": 3.959
+  },
+  {
+    "text": "it you can Define your own custom",
+    "start": 104.52,
+    "duration": 3.959
+  },
+  {
+    "text": "classes which are blueprints for objects",
+    "start": 106.159,
+    "duration": 4.441
+  },
+  {
+    "text": "then add attributes and methods to them",
+    "start": 108.479,
+    "duration": 4.041
+  },
+  {
+    "text": "use the new keyword to instantiate an",
+    "start": 110.6,
+    "duration": 4.04
+  },
+  {
+    "text": "object from the class it feels very",
+    "start": 112.52,
+    "duration": 4.0
+  },
+  {
+    "text": "objectoriented but has evolved to",
+    "start": 114.64,
+    "duration": 3.399
+  },
+  {
+    "text": "support functional patterns like",
+    "start": 116.52,
+    "duration": 3.72
+  },
+  {
+    "text": "Anonymous Lambda methods when your PR is",
+    "start": 118.039,
+    "duration": 4.72
+  },
+  {
+    "text": "finished use the compiler to generate a",
+    "start": 120.24,
+    "duration": 4.76
+  },
+  {
+    "text": "class file which contains the bite code",
+    "start": 122.759,
+    "duration": 4.68
+  },
+  {
+    "text": "now use the Java command to tell the jvm",
+    "start": 125.0,
+    "duration": 4.319
+  },
+  {
+    "text": "to interpret and run that file",
+    "start": 127.439,
+    "duration": 3.641
+  },
+  {
+    "text": "congratulations you just built an",
+    "start": 129.319,
+    "duration": 3.521
+  },
+  {
+    "text": "Enterprise grade application this has",
+    "start": 131.08,
+    "duration": 4.32
+  },
+  {
+    "text": "been Java in 100 seconds hit subscribe",
+    "start": 132.84,
+    "duration": 4.28
+  },
+  {
+    "text": "for more short videos like this and if",
+    "start": 135.4,
+    "duration": 3.88
+  },
+  {
+    "text": "we somehow get to 100,000 likes on this",
+    "start": 137.12,
+    "duration": 4.28
+  },
+  {
+    "text": "video I'll do a full Java tutorial",
+    "start": 139.28,
+    "duration": 3.959
+  },
+  {
+    "text": "thanks for watching and I will see you",
+    "start": 141.4,
+    "duration": 5.04
+  },
+  {
+    "text": "in the next one",
+    "start": 143.239,
+    "duration": 3.201
+  }
+]

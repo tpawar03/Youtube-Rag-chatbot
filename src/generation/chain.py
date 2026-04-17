@@ -5,6 +5,7 @@ Uses LangChain Expression Language (LCEL) to build a modern RAG chain
 that supports multi-turn dialogue with context-aware follow-ups.
 """
 
+import re
 from typing import Optional
 
 from langchain_core.messages import HumanMessage, AIMessage
@@ -18,9 +19,22 @@ from src.generation.prompts import (
     CONVERSATIONAL_PROMPT,
     CONDENSE_PROMPT,
     SIMPLE_QA_PROMPT,
+    get_conversational_prompt,
     format_context,
 )
 from config import PipelineConfig
+
+_CONFIDENCE_RE = re.compile(r"CONFIDENCE:\s*([1-5])\s*/\s*5", re.IGNORECASE)
+
+
+def _parse_confidence(raw: str) -> tuple[str, int | None]:
+    """Strip the CONFIDENCE line from the answer and return (clean_answer, confidence)."""
+    match = _CONFIDENCE_RE.search(raw)
+    if match:
+        confidence = int(match.group(1))
+        clean = _CONFIDENCE_RE.sub("", raw).rstrip()
+        return clean, confidence
+    return raw, None
 
 
 class RAGChain:
@@ -67,25 +81,23 @@ class RAGChain:
             "question": question,
         })
 
-    def ask(self, question: str) -> dict:
+    def ask(self, question: str, prompt_style: str = "default") -> dict:
         """
         Ask a question and get a grounded answer.
 
         Args:
             question: User's question.
+            prompt_style: One of "default", "concise", "detailed", "eli5".
 
         Returns:
             Dict with keys:
-                - answer (str): Generated response.
+                - answer (str): Generated response (confidence line stripped).
                 - sources (list[dict]): Source chunks with timestamps.
+                - confidence (int | None): Self-rated confidence 1-5.
         """
-        # Step 1: Condense question if follow-up
         standalone_question = self._condense_question(question)
 
-        # Step 2: Retrieve candidates
         candidates = self.retriever.retrieve(standalone_question)
-
-        # Step 3: Optionally rerank
         if self.reranker and self.config.retrieval.use_reranker:
             candidates = self.reranker.rerank(
                 standalone_question,
@@ -95,21 +107,19 @@ class RAGChain:
         else:
             candidates = candidates[:self.config.retrieval.top_k]
 
-        # Step 4: Format context
         context = format_context(candidates)
 
-        # Step 5: Generate answer
-        answer = self._qa_chain.invoke({
+        qa_chain = get_conversational_prompt(prompt_style) | self.llm | StrOutputParser()
+        raw = qa_chain.invoke({
             "context": context,
             "chat_history": self._chat_history,
             "question": question,
         })
+        answer, confidence = _parse_confidence(raw)
 
-        # Step 6: Update chat history
         self._chat_history.append(HumanMessage(content=question))
         self._chat_history.append(AIMessage(content=answer))
 
-        # Step 7: Build source info
         sources = []
         for chunk in candidates:
             text = chunk["text"]
@@ -121,10 +131,7 @@ class RAGChain:
                 "score": chunk.get("score", 0),
             })
 
-        return {
-            "answer": answer,
-            "sources": sources,
-        }
+        return {"answer": answer, "sources": sources, "confidence": confidence}
 
     def ask_simple(self, question: str, context_chunks: list[dict]) -> str:
         """
@@ -143,6 +150,40 @@ class RAGChain:
             "context": context,
             "question": question,
         })
+
+    def generate_from_context(
+        self, question: str, context: str, candidates: list[dict],
+        prompt_style: str = "default",
+    ) -> dict:
+        """
+        Generate an answer from pre-retrieved context (no retrieval step).
+        Used for dual-model comparison where retrieval is shared.
+        """
+        qa_chain = get_conversational_prompt(prompt_style) | self.llm | StrOutputParser()
+        raw = qa_chain.invoke({
+            "context": context,
+            "chat_history": self._chat_history,
+            "question": question,
+        })
+        answer, confidence = _parse_confidence(raw)
+
+        sources = []
+        for chunk in candidates:
+            text = chunk["text"]
+            sources.append({
+                "text": text[:200] + "..." if len(text) > 200 else text,
+                "start_time": chunk.get("start_time", 0),
+                "end_time": chunk.get("end_time", 0),
+                "video_id": chunk.get("video_id", ""),
+                "score": chunk.get("score", 0),
+            })
+
+        return {"answer": answer, "sources": sources, "confidence": confidence}
+
+    def update_memory(self, question: str, answer: str):
+        """Append a Q/A turn to chat history (used after dual-model selection)."""
+        self._chat_history.append(HumanMessage(content=question))
+        self._chat_history.append(AIMessage(content=answer))
 
     def reset_memory(self):
         """Clear conversation history."""

@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2026-04-16T22:10:16.002057",
+    "winner": "mistral",
+    "loser": "llama2",
+    "question": "Give me the summary of the video",
+    "video_id": "l9AzO1FMgM8"
+  },
+  {
+    "timestamp": "2026-04-16T22:11:28.569226",
+    "winner": "llama2",
+    "loser": "mistral",
+    "question": "what is java?",
+    "video_id": "l9AzO1FMgM8"
+  },
+  {
+    "timestamp": "2026-04-16T22:13:49.216063",
+    "winner": "llama2",
+    "loser": "mistral",
+    "question": "what is platform independence in java?",
+    "video_id": "l9AzO1FMgM8"
+  },
+  {
+    "timestamp": "2026-04-16T22:15:33.898030",
+    "winner": "mistral",
+    "loser": "llama2",
+    "question": "what is object oriented language",
+    "video_id": "l9AzO1FMgM8"
+  },
+  {
+    "timestamp": "2026-04-16T22:19:28.782256",
+    "winner": "llama2",
+    "loser": "mistral",
+    "question": "what is class file?",
+    "video_id": "l9AzO1FMgM8"
+  }
+]
