@@ -76,13 +76,35 @@ class RetrievalConfig:
     use_reranker: bool = False
     reranker_model: str = CROSS_ENCODER_MODEL
 
+    # Off-topic gate. Checked on RAW FAISS L2-distance scores (lower = more
+    # similar) BEFORE reranking, so the threshold stays meaningful regardless
+    # of whether the cross-encoder is enabled. If the best-matching chunk's
+    # distance is >= this threshold, the question is considered unrelated to
+    # the video and the pipeline short-circuits with a refusal.
+    # Empirical ranges (minilm): on-topic < 1.0, tech-adjacent 1.2-1.3,
+    # clearly off-topic 1.8-2.2. Default 1.3 errs on the strict side.
+    off_topic_threshold: float = 1.3
+
 
 @dataclass
 class GenerationConfig:
-    """Configuration for the LLM."""
+    """
+    Sampling hyperparameters for the LLM.
+
+    Chosen for grounded-but-varied RAG answers:
+      - temperature 0.4: enough variation to produce distinct phrasings
+        across runs without the drift that sets in above ~0.6.
+      - top_p 0.9 + top_k 40: complementary nucleus + top-k truncation,
+        prunes the low-probability tail that causes hallucination.
+      - repeat_penalty 1.15: slightly above Ollama's 1.1 default —
+        discourages the LLM from rehashing phrases within a single answer.
+      - no seed: repeated calls genuinely differ.
+    """
     model_name: str = "mistral"     # key in LLM_MODELS
-    temperature: float = 0.1
+    temperature: float = 0.4
     top_p: float = 0.9
+    top_k: int = 40
+    repeat_penalty: float = 1.15
     max_tokens: int = 1024
     ollama_base_url: str = OLLAMA_BASE_URL
 

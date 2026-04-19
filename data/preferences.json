@@ -1,0 +1,37 @@
+{
+  "scores": {
+    "llama2": 5
+  },
+  "history": [
+    {
+      "winner": "llama2",
+      "question": "How did Transformers specifically help improve translation and speech recognition at Google?",
+      "video_id": "bTA8sjgvA4c",
+      "timestamp": "2026-04-18T16:55:04"
+    },
+    {
+      "winner": "llama2",
+      "question": "What are some of the challenges in adopting intelligence, and how is Google working to overcome them?",
+      "video_id": "bTA8sjgvA4c",
+      "timestamp": "2026-04-18T16:59:32"
+    },
+    {
+      "winner": "llama2",
+      "question": "What are some of the challenges in adopting intelligence, and how is Google working to overcome them?",
+      "video_id": "bTA8sjgvA4c",
+      "timestamp": "2026-04-18T17:22:38"
+    },
+    {
+      "winner": "llama2",
+      "question": "What are some of the challenges in adopting intelligence, and how is Google working to overcome them?",
+      "video_id": "bTA8sjgvA4c",
+      "timestamp": "2026-04-18T17:45:32"
+    },
+    {
+      "winner": "llama2",
+      "question": "Give the launch and impact of ChatGPT",
+      "video_id": "bTA8sjgvA4c",
+      "timestamp": "2026-04-18T19:55:05"
+    }
+  ]
+}

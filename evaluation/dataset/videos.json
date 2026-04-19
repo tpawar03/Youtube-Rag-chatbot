@@ -1,34 +1,128 @@
 {
   "videos": [
     {
-      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "video_id": "sTUh-NQ7q3E",
       "domain": "news_analysis",
-      "title": "Example News Analysis Video",
-      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+      "title": "What is a recession? | CNBC Explains",
+      "url": "https://www.youtube.com/watch?v=sTUh-NQ7q3E"
     },
     {
-      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "video_id": "FMKMWBqy_EA",
+      "domain": "news_analysis",
+      "title": "How inflation works | CNBC Explains",
+      "url": "https://www.youtube.com/watch?v=FMKMWBqy_EA"
+    },
+    {
+      "video_id": "f0dVfDiSrFo",
+      "domain": "news_analysis",
+      "title": "How does immigration impact the economy? | CNBC Explains",
+      "url": "https://www.youtube.com/watch?v=f0dVfDiSrFo"
+    },
+    {
+      "video_id": "J5ElQe22c9Q",
+      "domain": "news_analysis",
+      "title": "Is capitalism dying? | CNBC Explains",
+      "url": "https://www.youtube.com/watch?v=J5ElQe22c9Q"
+    },
+
+    {
+      "video_id": "k6U-i4gXkLM",
       "domain": "cs_lectures",
-      "title": "Example CS Lecture",
-      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+      "title": "Lec 1 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+      "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM"
     },
     {
-      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "video_id": "Pij6J0HsYFA",
+      "domain": "cs_lectures",
+      "title": "Lec 2 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+      "url": "https://www.youtube.com/watch?v=Pij6J0HsYFA"
+    },
+    {
+      "video_id": "bX3jvD7XFPs",
+      "domain": "cs_lectures",
+      "title": "Lec 1 | MIT 6.00SC Introduction to Computer Science and Programming, Spring 2011",
+      "url": "https://www.youtube.com/watch?v=bX3jvD7XFPs"
+    },
+    {
+      "video_id": "L3LMbpZIKhQ",
+      "domain": "cs_lectures",
+      "title": "Lec 1 | MIT 6.042J Mathematics for Computer Science, Fall 2010",
+      "url": "https://www.youtube.com/watch?v=L3LMbpZIKhQ"
+    },
+
+    {
+      "video_id": "rng_yUSwrgU",
       "domain": "technical_reviews",
-      "title": "Example Technical Review",
-      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+      "title": "iPhone 17 Review: No Asterisks! (MKBHD)",
+      "url": "https://www.youtube.com/watch?v=rng_yUSwrgU"
     },
     {
-      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "video_id": "MRtg6A1f2Ko",
+      "domain": "technical_reviews",
+      "title": "iPhone 16/16 Pro Review: Times Have Changed! (MKBHD)",
+      "url": "https://www.youtube.com/watch?v=MRtg6A1f2Ko"
+    },
+    {
+      "video_id": "helyO25gj_k",
+      "domain": "technical_reviews",
+      "title": "It's embarrassing how much I like this thing. (Linus Tech Tips)",
+      "url": "https://www.youtube.com/watch?v=helyO25gj_k"
+    },
+    {
+      "video_id": "nywTR_83ZWs",
+      "domain": "technical_reviews",
+      "title": "I'm Sorry, Slower is… Better?? - Asus Zephyrus G14 and G16 First Look (Linus Tech Tips)",
+      "url": "https://www.youtube.com/watch?v=nywTR_83ZWs"
+    },
+
+    {
+      "video_id": "xqMKDiRH1R0",
       "domain": "cooking_tutorials",
-      "title": "Example Cooking Tutorial",
-      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+      "title": "How A Pro Chef Develops A Recipe From Scratch | Bon Appétit",
+      "url": "https://www.youtube.com/watch?v=xqMKDiRH1R0"
     },
     {
-      "video_id": "REPLACE_WITH_VIDEO_ID",
+      "video_id": "OGpMnx_PFLk",
+      "domain": "cooking_tutorials",
+      "title": "I Baked 72 Cinnamon Rolls To Create The Perfect Recipe | Bon Appétit",
+      "url": "https://www.youtube.com/watch?v=OGpMnx_PFLk"
+    },
+    {
+      "video_id": "dpSkVa9kE20",
+      "domain": "cooking_tutorials",
+      "title": "5 Pro Chefs Make Their Go-To Appetizers | Test Kitchen Talks | Bon Appétit",
+      "url": "https://www.youtube.com/watch?v=dpSkVa9kE20"
+    },
+    {
+      "video_id": "8aKpqlenQF4",
+      "domain": "cooking_tutorials",
+      "title": "I Tried Viral Vintage Recipes (Joshua Weissman)",
+      "url": "https://www.youtube.com/watch?v=8aKpqlenQF4"
+    },
+
+    {
+      "video_id": "MY3Qy6vAbZQ",
       "domain": "travel_vlogs",
-      "title": "Example Travel Vlog",
-      "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID"
+      "title": "24 Hour Thai Street Food Challenge in Bangkok | Epic Food Journeys with Mark Wiens | Nat Geo",
+      "url": "https://www.youtube.com/watch?v=MY3Qy6vAbZQ"
+    },
+    {
+      "video_id": "D1GXUWUNeRE",
+      "domain": "travel_vlogs",
+      "title": "Senegal Food Tour: 24 Hours of Unforgettable Cuisine | Epic Food Journeys with Mark Wiens | Nat Geo",
+      "url": "https://www.youtube.com/watch?v=D1GXUWUNeRE"
+    },
+    {
+      "video_id": "yu6QSO37m9c",
+      "domain": "travel_vlogs",
+      "title": "Mark Wiens Goes Night Fishing and Jungle Foraging in Remote Thailand | Epic Food Journeys | Nat Geo",
+      "url": "https://www.youtube.com/watch?v=yu6QSO37m9c"
+    },
+    {
+      "video_id": "dlPQHMVKqDc",
+      "domain": "travel_vlogs",
+      "title": "THE TRUTH BEHIND EVERY TRAVEL VLOG… | Drew Binsky",
+      "url": "https://www.youtube.com/watch?v=dlPQHMVKqDc"
     }
   ],
   "domains": {
@@ -38,5 +132,5 @@
     "cooking_tutorials": {"count": 4, "fact_dense": false},
     "travel_vlogs": {"count": 4, "fact_dense": false}
   },
-  "notes": "Replace video IDs with actual YouTube videos. Target: 4 videos per domain, 20 total."
+  "notes": "20 videos across 5 domains. IDs were picked via web search on 2026-04-18. Before running ablation, verify each video still has captions available by running: python -c \"from src.transcript.fetcher import fetch_transcript; fetch_transcript('VIDEO_ID')\""
 }

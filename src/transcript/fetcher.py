@@ -6,16 +6,42 @@ a YouTube Data API key. Handles URL parsing, language fallback,
 and common error cases.
 """
 
+import json
+import os
 import re
 from typing import Optional
 from urllib.parse import parse_qs, urlparse
 
+import requests
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import (
+    IpBlocked,
     NoTranscriptFound,
+    RequestBlocked,
     TranscriptsDisabled,
     VideoUnavailable,
 )
+from youtube_transcript_api.proxies import WebshareProxyConfig
+
+from config import TRANSCRIPTS_DIR
+
+
+def _build_api() -> YouTubeTranscriptApi:
+    """
+    Construct a YouTubeTranscriptApi. Routes through Webshare rotating
+    proxies when WEBSHARE_PROXY_USERNAME and WEBSHARE_PROXY_PASSWORD are
+    set, otherwise uses direct requests.
+    """
+    user = os.getenv("WEBSHARE_PROXY_USERNAME")
+    pw = os.getenv("WEBSHARE_PROXY_PASSWORD")
+    if user and pw:
+        return YouTubeTranscriptApi(
+            proxy_config=WebshareProxyConfig(
+                proxy_username=user,
+                proxy_password=pw,
+            )
+        )
+    return YouTubeTranscriptApi()
 
 
 class TranscriptFetchError(Exception):
@@ -86,8 +112,13 @@ def fetch_transcript(
 
     video_id = extract_video_id(url_or_id)
 
+    cache_path = TRANSCRIPTS_DIR / f"{video_id}_raw.json"
+    if cache_path.exists():
+        with open(cache_path, "r") as f:
+            return json.load(f)
+
     try:
-        api = YouTubeTranscriptApi()
+        api = _build_api()
         fetched = api.fetch(video_id, languages=languages)
         # Convert FetchedTranscriptSnippet objects to plain dicts
         transcript = [
@@ -108,6 +139,12 @@ def fetch_transcript(
     except VideoUnavailable:
         raise TranscriptFetchError(
             f"Video is unavailable: {video_id}"
+        )
+    except (IpBlocked, RequestBlocked, requests.exceptions.RequestException) as e:
+        raise TranscriptFetchError(
+            f"Transcript fetch blocked for {video_id} ({type(e).__name__}). "
+            f"The Webshare proxy pool is rate-limited by YouTube — "
+            f"try again later or upgrade the Webshare plan."
         )
     except Exception as e:
         raise TranscriptFetchError(

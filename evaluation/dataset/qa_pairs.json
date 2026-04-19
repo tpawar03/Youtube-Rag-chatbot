@@ -1,11 +1,134 @@
 [
   {
-    "question": "EXAMPLE: What was the main topic discussed in the video?",
-    "answer": "EXAMPLE: The video discussed the impact of AI on healthcare.",
-    "relevant_chunk_ids": [0, 1],
-    "video_id": "REPLACE_WITH_VIDEO_ID",
+    "question": "What does a chatbot use to pause before responding, as mentioned in the transcript?",
+    "answer": "A chatbot uses a reasoning model to pause before responding, which generates an internal chain of thought to break down a problem step by step.",
+    "relevant_chunk_ids": [
+      1
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What is the purpose of using a vector database instead of storing raw data like text files and images?",
+    "answer": "The purpose of using a vector database is to perform searches as mathematical operations, finding semantically similar content by looking for vector embeddings that are close to each other.",
+    "relevant_chunk_ids": [
+      1
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "How does the embedding model convert images into vectors in a vector database?",
+    "answer": "The embedding model converts images into multidimensional numeric vectors by breaking down the images and capturing their semantic meaning as a long list of numbers.",
+    "relevant_chunk_ids": [
+      1
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What is the purpose of the RAG system in relation to employee handbooks?",
+    "answer": "The RAG system pulls relevant sections from the employee handbook to include in a prompt when a question about company policy is asked.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "When was the idea of Mixture of Experts (MOE) first published in a scientific journal?",
+    "answer": "The idea of Mixture of Experts (MOE) was first published in a scientific journal in 1991.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What does MCP standardize for large language models and why is it considered exciting?",
+    "answer": "MCP standardizes how applications provide context to large language models, making connections to external data sources and tools easier and more efficient. It's considered exciting because it allows large language models to interact with a variety of systems without the need for customized connections.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What is the current status of ASI (Artificial Superintelligence) as per the speaker?",
+    "answer": "ASI does not exist and it is purely theoretical at this point.",
+    "relevant_chunk_ids": [
+      3
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What is AGI (Artificial General Intelligence) according to the speaker?",
+    "answer": "AGI is a theoretical standard that, if realized, will allow AI systems to complete all cognitive tasks as well as any human expert.",
+    "relevant_chunk_ids": [
+      3
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "How does MoE models like IBM Granite's 4.0 series work according to the speaker?",
+    "answer": "MoE models activate only specific experts they need for a given token, using a fraction of their total active parameters at inference time.",
+    "relevant_chunk_ids": [
+      3
+    ],
+    "video_id": "VSFuqMh4hus",
+    "domain": "news_analysis",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What kind of information are base models usually trained on?",
+    "answer": "Base models are usually trained on publicly available information.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "RRKwmeyIc24",
     "domain": "cs_lectures",
-    "auto_generated": false,
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?",
+    "answer": "Orchestration is important because it allows for breaking the initial user input down into smaller tasks, including thinking, execution, reviewing, and feedback loops.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "RRKwmeyIc24",
+    "domain": "cs_lectures",
+    "auto_generated": true,
+    "reviewed": true
+  },
+  {
+    "question": "What are some examples of modalities other than text that can be valuable for certain AI tasks?",
+    "answer": "Other modalities that can be valuable for certain AI tasks include image, audio, and numerical data sets.",
+    "relevant_chunk_ids": [
+      2
+    ],
+    "video_id": "RRKwmeyIc24",
+    "domain": "cs_lectures",
+    "auto_generated": true,
     "reviewed": true
   }
 ]
