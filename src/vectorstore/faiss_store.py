@@ -144,8 +144,12 @@ class FAISSStore:
         """
         load_dir = (directory or INDICES_DIR) / name
 
+        index_path = load_dir / "index.faiss"
+        if not index_path.exists():
+            raise FileNotFoundError(f"Index not found: {index_path}")
+
         # Load FAISS index
-        self._index = faiss.read_index(str(load_dir / "index.faiss"))
+        self._index = faiss.read_index(str(index_path))
 
         # Load chunk metadata
         with open(load_dir / "chunks.json", "r") as f:

@@ -11,6 +11,7 @@ variation in ablation studies.
 
 import json
 import logging
+from dataclasses import replace
 from pathlib import Path
 from typing import Optional, Callable
 
@@ -25,6 +26,13 @@ from src.retrieval.retriever import Retriever
 from src.retrieval.reranker import Reranker
 from src.generation.llm import create_llm
 from src.generation.chain import RAGChain
+from src.generation.grounding import score_sentences, answer_is_grounded
+from src.generation.prompts import parse_confidence, OFF_TOPIC_MESSAGE
+from config import LLM_MODELS as _LLM_MODELS_REGISTRY
+
+# All models built into every QueryPipeline for side-by-side comparison.
+# The user picks one after seeing both answers to the first question.
+DUAL_MODELS: list[str] = list(_LLM_MODELS_REGISTRY.keys())
 
 logger = logging.getLogger(__name__)
 
@@ -144,62 +152,185 @@ class QueryPipeline:
             store: Pre-built or loaded FAISSStore.
             embedder: Embedder instance (must match the store's model).
             skip_llm_health_check: Skip Ollama connectivity check.
+
+        One RAGChain is built per model in DUAL_MODELS. Health checks run
+        for each, so a missing model surfaces early with a clear message
+        rather than during the first question. Both chains share the same
+        retriever and reranker — retrieval is done once and generation
+        runs in both.
         """
         self.config = config
         self.store = store
         self.embedder = embedder
 
-        # Retriever
         self.retriever = Retriever(store, config.retrieval)
-
-        # Optional reranker
         self.reranker = (
             Reranker(config.retrieval) if config.retrieval.use_reranker
             else None
         )
 
-        # LLM
-        self.llm = create_llm(
-            config.generation,
-            skip_health_check=skip_llm_health_check,
-        )
+        self.chains: dict[str, RAGChain] = {}
+        for model_key in DUAL_MODELS:
+            gen = replace(config.generation, model_name=model_key)
+            llm = create_llm(gen, skip_health_check=skip_llm_health_check)
+            chain_config = replace(config, generation=gen)
+            self.chains[model_key] = RAGChain(
+                llm=llm,
+                retriever=self.retriever,
+                reranker=self.reranker,
+                config=chain_config,
+            )
 
-        # RAG Chain
-        self.chain = RAGChain(
-            llm=self.llm,
-            retriever=self.retriever,
-            reranker=self.reranker,
-            config=config,
-        )
+        # The first chain is also used for overview generation, where
+        # the choice of model is not user-facing.
+        self.chain: RAGChain = self.chains[DUAL_MODELS[0]]
 
-    def ask(self, question: str) -> dict:
+    @property
+    def models(self) -> list[str]:
+        return list(self.chains.keys())
+
+    def ask_dual(self, question: str, prompt_style: str = "default") -> dict:
         """
-        Ask a question about the ingested video.
+        Ask a question against every model on the SAME retrieved context.
 
-        Args:
-            question: User's natural language question.
+        Retrieval runs once (via the first chain's retriever); every model
+        then generates from the shared context. Each chain appends to its
+        own chat history so follow-ups can later condense correctly against
+        whichever model the user picks.
 
         Returns:
-            Dict with keys: answer, sources.
+            {
+                "sources": list[dict],
+                "candidates": list[dict],
+                "responses": {
+                    <model_key>: {"answer": str, "grounded_sentences": [...]},
+                    ...
+                },
+            }
         """
-        return self.chain.ask(question)
+        from langchain_core.messages import HumanMessage, AIMessage
+
+        context, candidates, sources, off_topic = self.chain._prepare_context(question)
+
+        # Layer 1: retrieval-side off-topic gate on RAW FAISS scores. Returns
+        # a non-dual single-answer shape — Streamlit routes it as a plain
+        # assistant message; no pick is needed.
+        if off_topic:
+            for chain in self.chains.values():
+                chain._chat_history.append(HumanMessage(content=question))
+                chain._chat_history.append(AIMessage(content=OFF_TOPIC_MESSAGE))
+            return {
+                "off_topic": True,
+                "answer": OFF_TOPIC_MESSAGE,
+                "sources": [],
+            }
+
+        # Generate with every model on the shared context, applying the
+        # post-gen grounding fallback per model: if an LLM ignored the
+        # context and answered from outside knowledge, replace its answer
+        # with the refusal so the user can't pick an ungrounded response.
+        responses: dict[str, dict] = {}
+        grounded_count = 0
+        for model_key, chain in self.chains.items():
+            raw_answer = chain._generate_with_context(question, context, prompt_style)
+            answer, confidence = parse_confidence(raw_answer)
+
+            if answer and not answer_is_grounded(answer, candidates):
+                answer = OFF_TOPIC_MESSAGE
+                confidence = None
+            else:
+                grounded_count += 1
+
+            chain._chat_history.append(HumanMessage(content=question))
+            chain._chat_history.append(AIMessage(content=answer))
+            responses[model_key] = {
+                "answer": answer,
+                "grounded_sentences": score_sentences(answer, candidates),
+                "confidence": confidence,
+            }
+
+        # If BOTH models produced ungrounded answers, collapse to the same
+        # single-message shape as the retrieval gate — nothing useful to
+        # pick between.
+        if grounded_count == 0:
+            return {
+                "off_topic": True,
+                "answer": OFF_TOPIC_MESSAGE,
+                "sources": [],
+            }
+
+        return {
+            "off_topic": False,
+            "sources": sources,
+            "candidates": candidates,
+            "responses": responses,
+        }
+
+    def ask_with_model(
+        self,
+        model_key: str,
+        question: str,
+        prompt_style: str = "default",
+    ) -> dict:
+        """
+        Ask a question using only the specified model's chain. Used after
+        the user has picked a winner — subsequent turns route here, so
+        only the chosen chain advances its chat history.
+        """
+        if model_key not in self.chains:
+            raise ValueError(
+                f"Unknown model '{model_key}'. Available: {list(self.chains)}"
+            )
+        return self.chains[model_key].ask(question, prompt_style=prompt_style)
+
+    def ask(self, question: str, prompt_style: str = "default") -> dict:
+        """Back-compat alias: single-model ask via the default chain."""
+        return self.chain.ask(question, prompt_style=prompt_style)
 
     def ask_batch(self, questions: list[str]) -> list[dict]:
         """
         Run multiple questions in batch (for evaluation).
-        Resets memory between questions.
-
-        Args:
-            questions: List of questions.
-
-        Returns:
-            List of result dicts.
+        Resets memory between questions. Uses the default chain only.
         """
         results = []
         for q in questions:
             self.chain.reset_memory()
             results.append(self.ask(q))
         return results
+
+    def generate_overview(
+        self,
+        video_id: str,
+        force_regenerate: bool = False,
+    ) -> dict:
+        """
+        Produce (and cache) a video overview: summary, key topics,
+        suggested questions. Reads the already-saved clean transcript
+        for {video_id} from TRANSCRIPTS_DIR.
+
+        Args:
+            video_id: YouTube video ID (must already be ingested).
+            force_regenerate: Ignore cache and re-run the LLM.
+
+        Returns:
+            {"summary": str, "topics": list[str], "suggested_questions": list[str]}
+        """
+        cache_path = TRANSCRIPTS_DIR / f"{video_id}_overview.json"
+        if cache_path.exists() and not force_regenerate:
+            with open(cache_path, "r") as f:
+                return json.load(f)
+
+        clean_path = TRANSCRIPTS_DIR / f"{video_id}_clean.json"
+        with open(clean_path, "r") as f:
+            segments = json.load(f)
+        transcript_text = " ".join(s.get("text", "") for s in segments)
+
+        overview = self.chain.generate_overview(transcript_text)
+
+        with open(cache_path, "w") as f:
+            json.dump(overview, f, indent=2)
+
+        return overview
 
     def retrieve_only(self, question: str) -> list[dict]:
         """

@@ -78,6 +78,8 @@ def create_llm(config: GenerationConfig, skip_health_check: bool = False) -> Oll
         base_url=config.ollama_base_url,
         temperature=config.temperature,
         top_p=config.top_p,
+        top_k=config.top_k,
+        repeat_penalty=config.repeat_penalty,
         num_predict=config.max_tokens,
     )
 

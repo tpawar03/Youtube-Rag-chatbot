@@ -19,7 +19,10 @@ from app.components.chat import (
     render_chat_history,
     add_user_message,
     add_assistant_message,
+    add_dual_assistant_message,
+    format_overview_message,
 )
+from src.generation.grounding import score_sentences, render_with_highlights
 from app.components.status import render_ingest_complete
 from src.pipeline import IngestPipeline, QueryPipeline
 from src.embedding.embedder import Embedder
@@ -161,12 +164,18 @@ if "query_pipeline" not in st.session_state:
     st.session_state.query_pipeline = None
 if "ingest_info" not in st.session_state:
     st.session_state.ingest_info = None
+# Which model the user has picked as the winner. While None, the first
+# question of a turn fans out to both models; once set, subsequent turns
+# route only through that model's chain.
+if "picked_model" not in st.session_state:
+    st.session_state.picked_model = None
 
 
 # ─────────────────────────────────────────────
 # Sidebar
 # ─────────────────────────────────────────────
-video_url, config, ingest_clicked = render_sidebar()
+video_url, config, ingest_clicked, ui_state = render_sidebar()
+prompt_style = ui_state["prompt_style"]
 
 
 # ─────────────────────────────────────────────
@@ -240,7 +249,8 @@ if ingest_clicked and video_url:
         with status_placeholder.container():
             render_ingest_complete(info)
 
-        # Build query pipeline
+        # Build query pipeline — chains for ALL LLMs are always constructed
+        # so the first question can fan out to both Mistral and Llama2.
         query_pipeline = QueryPipeline(
             config=config,
             store=pipeline.store,
@@ -248,11 +258,24 @@ if ingest_clicked and video_url:
             skip_llm_health_check=False,
         )
 
-        # Update session state
+        # Generate video overview before the user can ask anything.
+        # Runs synchronously so the first render already has the overview
+        # message seeded — no input-gating flag needed.
+        overview_placeholder = st.empty()
+        overview_placeholder.info("🧠 Reading the video and preparing an overview...")
+        overview = query_pipeline.generate_overview(video_id)
+        overview_placeholder.empty()
+
+        # Update session state — new ingest means fresh comparison too.
         st.session_state.current_video_id = video_id
         st.session_state.query_pipeline = query_pipeline
         st.session_state.ingest_info = info
-        st.session_state.messages = []
+        st.session_state.picked_model = None
+        st.session_state.messages = [{
+            "role": "assistant",
+            "content": format_overview_message(overview),
+            "sources": [],
+        }]
 
         st.rerun()
 
@@ -296,36 +319,93 @@ if st.session_state.current_video_id:
     # Render chat history
     render_chat_history()
 
-    # Chat input
-    if prompt := st.chat_input("Ask a question about the video..."):
-        # Add and display user message
+    # If there's a dual turn waiting for a pick, block the input so the
+    # user can't ask a new question until they've chosen a winner.
+    pending_pick = any(
+        m.get("dual") and m.get("picked") is None
+        for m in st.session_state.messages
+    )
+    input_placeholder = (
+        "Pick a preferred answer above to continue..."
+        if pending_pick
+        else "Ask a question about the video..."
+    )
+    prompt = st.chat_input(input_placeholder, disabled=pending_pick)
+
+    if prompt:
         add_user_message(prompt)
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Generate response
-        with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                try:
-                    pipeline = st.session_state.query_pipeline
+        pipeline = st.session_state.query_pipeline
+        picked = st.session_state.picked_model
 
-                    if pipeline is None:
-                        st.error("Pipeline not initialized. Please ingest a video first.")
-                    else:
-                        result = pipeline.ask(prompt)
+        if pipeline is None:
+            with st.chat_message("assistant"):
+                st.error("Pipeline not initialized. Please ingest a video first.")
+        elif picked is None:
+            # No winner yet → fan out to both models on shared context.
+            with st.chat_message("assistant"):
+                with st.spinner("Asking both Mistral and Llama2..."):
+                    try:
+                        result = pipeline.ask_dual(prompt, prompt_style=prompt_style)
+                        if result.get("off_topic"):
+                            # Retrieval gate fired — render a single refusal,
+                            # skip the dual pick flow entirely.
+                            add_assistant_message(result["answer"])
+                        else:
+                            turn_id = f"turn_{len(st.session_state.messages)}"
+                            add_dual_assistant_message(
+                                question=prompt,
+                                responses=result["responses"],
+                                sources=result["sources"],
+                                turn_id=turn_id,
+                            )
+                    except Exception as e:
+                        error_msg = f"Error generating dual response: {e}"
+                        st.error(error_msg)
+                        add_assistant_message(error_msg)
+            st.rerun()
+        else:
+            # User has already picked a winner → route only to that model.
+            with st.chat_message("assistant"):
+                with st.spinner(f"Thinking ({picked})..."):
+                    try:
+                        result = pipeline.ask_with_model(
+                            picked, prompt, prompt_style=prompt_style
+                        )
                         answer = result.get("answer", "I couldn't generate a response.")
                         sources = result.get("sources", [])
+                        candidates = result.get("candidates", [])
+                        confidence = result.get("confidence")
 
-                        st.markdown(answer)
+                        scored = score_sentences(answer, candidates)
+                        highlighted = render_with_highlights(scored)
 
-                        # Render citations
-                        from app.components.chat import render_citations
+                        from app.components.chat import render_confidence_badge, render_citations
+                        if confidence is not None:
+                            st.markdown(
+                                f"<div style='margin-bottom: 0.4rem;'>"
+                                f"{render_confidence_badge(confidence)}</div>",
+                                unsafe_allow_html=True,
+                            )
+                        # render_with_highlights returns "" when there are
+                        # no scored sentences (e.g., off-topic refusal with
+                        # no candidates) — fall back to plain text so the
+                        # message doesn't disappear.
+                        if highlighted:
+                            st.markdown(highlighted, unsafe_allow_html=True)
+                        else:
+                            st.markdown(answer)
                         render_citations(sources)
 
-                        # Save to history
-                        add_assistant_message(answer, sources)
-
-                except Exception as e:
-                    error_msg = f"Error generating response: {e}"
-                    st.error(error_msg)
-                    add_assistant_message(error_msg)
+                        add_assistant_message(
+                            answer,
+                            sources,
+                            grounded_sentences=scored,
+                            confidence=confidence,
+                        )
+                    except Exception as e:
+                        error_msg = f"Error generating response: {e}"
+                        st.error(error_msg)
+                        add_assistant_message(error_msg)
