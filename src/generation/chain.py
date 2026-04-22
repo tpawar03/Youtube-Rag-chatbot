@@ -5,6 +5,9 @@ Uses LangChain Expression Language (LCEL) to build a modern RAG chain
 that supports multi-turn dialogue with context-aware follow-ups.
 """
 
+from __future__ import annotations
+
+
 from typing import Optional
 
 from langchain_core.messages import HumanMessage, AIMessage

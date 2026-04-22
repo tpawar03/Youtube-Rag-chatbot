@@ -9,6 +9,9 @@ Configuration-driven via PipelineConfig dataclass, enabling systematic
 variation in ablation studies.
 """
 
+from __future__ import annotations
+
+
 import json
 import logging
 from dataclasses import replace

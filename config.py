@@ -5,6 +5,9 @@ All hyperparameters, model names, and paths are defined here as dataclasses
 so they can be passed around the pipeline and varied systematically in ablation studies.
 """
 
+from __future__ import annotations
+
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Literal

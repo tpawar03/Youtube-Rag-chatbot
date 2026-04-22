@@ -6,6 +6,9 @@ a YouTube Data API key. Handles URL parsing, language fallback,
 and common error cases.
 """
 
+from __future__ import annotations
+
+
 import json
 import os
 import re

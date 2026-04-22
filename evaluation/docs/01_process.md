@@ -4,7 +4,17 @@ This document records how the ablation / evaluation study was actually carried o
 including dead ends and fixes that were required along the way. It is the
 companion to `02_results.md` (numbers) and `03_observations.md` (interpretation).
 
-Study date: 2026-04-18.
+Study dates: 2026-04-18 (initial run), 2026-04-21 (re-run).
+
+The 2026-04-21 re-run used the same pipeline, configs, dataset, and QA
+pairs; only the LLM samples differ (temperature 0.4, no seed). Retrieval
+results are bit-for-bit identical between runs. Generation and faithfulness
+tables in `02_results.md` reflect the 2026-04-21 numbers; see that file
+and `03_observations.md` RQ4 for an analysis of where the two runs
+disagreed. Both drivers (`evaluation/ablation.py` and
+`evaluation/run_subset_generation.py`) were invoked via
+`python -m evaluation.<script>` with default arguments; `evaluation/plots.py`
+regenerated the five PNGs from the fresh CSVs.
 
 ## 1. Test-set design (intended)
 

@@ -33,7 +33,9 @@
       "Bash(python3 *)",
       "Bash(ps -p 86226 -o command=)",
       "Bash(/opt/anaconda3/bin/python *)",
-      "Bash(pkill -f 'streamlit run app/streamlit_app.py')"
+      "Bash(pkill -f 'streamlit run app/streamlit_app.py')",
+      "Bash(curl -sS --max-time 3 http://localhost:11434/api/tags)",
+      "Bash(curl -s http://localhost:8501/_stcore/health)"
     ]
   }
 }

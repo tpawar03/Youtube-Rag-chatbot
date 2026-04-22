@@ -13,6 +13,9 @@ For each config, runs the full retrieval + generation evaluation
 pipeline and saves results.
 """
 
+from __future__ import annotations
+
+
 import json
 import logging
 import time

@@ -7,6 +7,9 @@ processes (query, document) pairs jointly, enabling deep
 cross-attention that captures fine-grained relevance.
 """
 
+from __future__ import annotations
+
+
 from sentence_transformers import CrossEncoder
 
 from config import RetrievalConfig, CROSS_ENCODER_MODEL

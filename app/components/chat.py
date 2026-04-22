@@ -5,6 +5,9 @@ Renders conversation messages with user/assistant bubbles
 and timestamp citation badges. Supports streaming responses.
 """
 
+from __future__ import annotations
+
+
 import streamlit as st
 
 from src.generation.grounding import render_with_highlights

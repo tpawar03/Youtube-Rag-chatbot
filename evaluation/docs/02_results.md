@@ -1,7 +1,9 @@
 # Evaluation Results
 
-Numeric results from the 2026-04-18 ablation run. All tables reproduce
-directly from the CSVs in `evaluation/results/`.
+Numeric results from the **2026-04-21 re-run** of the ablation study.
+Retrieval is deterministic and reproduces the 2026-04-18 baseline row-for-row;
+generation and faithfulness numbers reflect the fresh LLM samples from this
+run. All tables reproduce directly from the CSVs in `evaluation/results/`.
 
 - Dataset: 12 reviewed QA pairs across 2 fact-dense videos.
 - Retrieval: full 48-config grid (576 rows).
@@ -76,19 +78,29 @@ Source CSV: `evaluation/results/full_retrieval_retrieval.csv` (576 rows).
 
 | cfg_name             | BLEU  | ROUGE-1 | ROUGE-2 | ROUGE-L | BERT-P | BERT-R | BERT-F1 |
 |----------------------|-------|---------|---------|---------|--------|--------|---------|
-| no-rerank-mistral    | 0.240 | 0.498   | 0.379   | 0.441   | 0.177  | 0.672  | 0.382   |
-| sentence-mistral     | 0.268 | 0.540   | 0.414   | 0.469   | 0.240  | 0.667  | 0.424   |
-| **top-e5-mistral**       | **0.285** | **0.554**   | **0.431**   | **0.493**   | 0.229  | **0.724**  | **0.437**   |
-| top-minilm-llama2    | 0.160 | 0.375   | 0.255   | 0.317   | 0.200  | 0.547  | 0.350   |
-| top-minilm-mistral   | 0.261 | 0.523   | 0.400   | 0.460   | 0.192  | 0.679  | 0.396   |
-| top-mpnet-mistral    | 0.261 | 0.537   | 0.404   | 0.465   | 0.227  | 0.703  | 0.429   |
+| no-rerank-mistral    | 0.141 | 0.408   | 0.230   | 0.336   | 0.086  | 0.438  | 0.237   |
+| sentence-mistral     | 0.150 | 0.384   | 0.249   | 0.307   | 0.084  | 0.462  | 0.243   |
+| **top-e5-mistral**       | **0.292** | **0.548**   | **0.404**   | **0.487**   | **0.232**  | **0.652**  | **0.411**   |
+| top-minilm-llama2    | 0.139 | 0.364   | 0.220   | 0.292   | 0.073  | 0.421  | 0.221   |
+| top-minilm-mistral   | 0.202 | 0.442   | 0.294   | 0.369   | 0.136  | 0.496  | 0.290   |
+| top-mpnet-mistral    | 0.229 | 0.494   | 0.339   | 0.437   | 0.176  | 0.590  | 0.352   |
+
+Ordering on BERT-F1 is preserved from the prior run: `top-e5-mistral` remains
+the fluency winner, followed by `top-mpnet-mistral` → `top-minilm-mistral`.
+All absolute numbers drifted down by 2–15 points because LLM sampling is
+stochastic (temperature 0.4, no seed) and the 6-config × 12-QA = 72-row
+subset is too small to average the variance out.
 
 ### By domain
 
 | Domain         | BLEU  | ROUGE-L | BERT-F1 |
 |----------------|-------|---------|---------|
-| cs_lectures    | 0.250 | 0.467   | 0.379   |
-| news_analysis  | 0.245 | 0.432   | 0.411   |
+| cs_lectures    | 0.271 | 0.493   | 0.357   |
+| news_analysis  | 0.166 | 0.330   | 0.271   |
+
+News vs. CS-lectures ranking flipped between runs (news was higher on
+2026-04-18, CS lectures is higher on 2026-04-21). With only 12 QA pairs,
+this is within sampling noise — see `03_observations.md` RQ1 for discussion.
 
 Source CSV: `evaluation/results/subset_generation.csv` (72 rows).
 
@@ -102,19 +114,29 @@ with the retrieved context; "fact precision" = supported / num_facts.
 
 | cfg_name             | num_facts | supported | fact_precision | unsupported_rate |
 |----------------------|-----------|-----------|----------------|------------------|
-| no-rerank-mistral    | 3.58      | 2.67      | 0.668          | 33.2%            |
-| sentence-mistral     | 3.17      | 2.25      | 0.653          | 34.7%            |
-| top-e5-mistral       | 3.33      | 2.25      | 0.661          | 33.9%            |
-| **top-minilm-llama2**    | 4.50      | 3.50      | **0.824**          | **17.6%**            |
-| top-minilm-mistral   | 4.25      | 2.75      | 0.610          | 39.0%            |
-| top-mpnet-mistral    | 3.67      | 2.42      | 0.617          | 38.3%            |
+| no-rerank-mistral    | 2.92      | 1.25      | 0.333          | 66.7%            |
+| sentence-mistral     | 3.25      | 1.67      | 0.467          | 53.3%            |
+| **top-e5-mistral**       | 3.00      | 2.33      | **0.721**          | **27.9%**            |
+| top-minilm-llama2    | 3.33      | 1.42      | 0.407          | 59.3%            |
+| top-minilm-mistral   | 2.83      | 1.08      | 0.321          | 67.9%            |
+| top-mpnet-mistral    | 3.00      | 1.92      | 0.618          | 38.2%            |
 
 ### By LLM
 
 | LLM      | num_facts | supported | fact_precision |
 |----------|-----------|-----------|----------------|
-| mistral  | 3.60      | 2.47      | 0.642          |
-| llama2   | 4.50      | 3.50      | 0.824          |
+| mistral  | 3.00      | 1.65      | 0.492          |
+| llama2   | 3.33      | 1.42      | 0.407          |
+
+**Note — LLM ranking flipped between runs.** The 2026-04-18 run had
+Llama-2 at 0.824 fact precision vs. Mistral at 0.642; this run has
+Mistral at 0.492 vs. Llama-2 at 0.407. The 50%-token-overlap heuristic
+is extremely sensitive to phrasing choices an LLM makes under stochastic
+sampling (a single substituted synonym flips a supported claim to
+unsupported), and with only 12 QA pairs × 1 LLM = 12 observations per
+cell, the noise floor is well above the observed gap. Treat the
+LLM-faithfulness ranking as **unresolved** until a larger corpus or an
+NLI-based / LLM-judge metric (RAGAS Faithfulness) is added.
 
 Source CSV: `evaluation/results/subset_faithfulness.csv` (72 rows).
 
@@ -130,16 +152,18 @@ All under `evaluation/results/`:
 
 ## Best overall configuration
 
-Two "winners" depending on what you optimise for.
+On the 2026-04-21 re-run, **`e5 + fixed-500 + rerank + mistral` wins on
+both fluency and grounding**:
 
-**Fluency / reference match:**
-`e5 + fixed-500 + rerank + mistral` —
-BLEU 0.285, ROUGE-L 0.493, BERT-F1 0.437; retrieval MRR 1.0.
+- Fluency: BLEU 0.292, ROUGE-L 0.487, BERT-F1 0.411 (top of subset).
+- Grounding: fact precision 0.721 (top of subset).
+- Retrieval: MRR 1.00, Recall@5 1.00.
 
-**Grounding / low hallucination:**
-`minilm + fixed-500 + rerank + llama2` —
-fact precision 0.824 (vs ~0.62 for Mistral equivalents), at the cost of
-lower text-overlap scores.
+The "two-winner" pattern from the 2026-04-18 run (Mistral for fluency,
+Llama-2 for grounding) did not reproduce. See the RQ4 section of
+`03_observations.md` for why the cross-run divergence is expected given
+the stochastic-sampling + small-corpus setup, and why the single-winner
+result here is still fragile.
 
 ## Driver script (generation subset)
 

@@ -4,6 +4,9 @@ Top-K retrieval from the FAISS vector store.
 Returns documents with relevance scores and timestamp metadata.
 """
 
+from __future__ import annotations
+
+
 from langchain_core.documents import Document
 
 from src.vectorstore.faiss_store import FAISSStore

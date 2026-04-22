@@ -6,6 +6,9 @@ Includes a health check to verify Ollama is running and
 the requested model is available.
 """
 
+from __future__ import annotations
+
+
 import requests
 from langchain_ollama.llms import OllamaLLM
 

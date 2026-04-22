@@ -6,6 +6,9 @@ ensuring no chunk splits mid-sentence. Uses NLTK's sent_tokenize
 under the hood.
 """
 
+from __future__ import annotations
+
+
 import nltk
 import tiktoken
 

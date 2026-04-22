@@ -5,6 +5,9 @@ Defines system instructions and user prompt templates that enforce
 grounded-only answers with timestamp citations.
 """
 
+from __future__ import annotations
+
+
 import re
 
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder

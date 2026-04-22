@@ -9,6 +9,9 @@ Given a YouTube video ID:
     5. Outputs a draft qa_pairs.json for human review.
 """
 
+from __future__ import annotations
+
+
 import json
 import logging
 import sys

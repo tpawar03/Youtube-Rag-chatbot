@@ -4,6 +4,9 @@ Ingestion progress status component.
 Displays pipeline stage progress during video ingestion.
 """
 
+from __future__ import annotations
+
+
 import streamlit as st
 
 

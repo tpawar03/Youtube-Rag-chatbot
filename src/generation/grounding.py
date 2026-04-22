@@ -10,6 +10,9 @@ blatantly fabricated content but will false-flag sentences that paraphrase
 heavily. Tune GROUNDING_THRESHOLD if too noisy.
 """
 
+from __future__ import annotations
+
+
 import re
 import string
 

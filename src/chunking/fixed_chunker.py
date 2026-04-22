@@ -5,6 +5,9 @@ with a tiktoken tokenizer.
 Each chunk carries metadata: video_id, start_time, end_time, chunk_index.
 """
 
+from __future__ import annotations
+
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from config import ChunkingConfig

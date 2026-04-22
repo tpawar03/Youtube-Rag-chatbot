@@ -6,6 +6,9 @@ generated answers against reference answers from the
 annotated QA dataset.
 """
 
+from __future__ import annotations
+
+
 import json
 import logging
 from pathlib import Path

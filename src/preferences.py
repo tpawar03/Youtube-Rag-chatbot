@@ -6,6 +6,9 @@ compare responses side-by-side, and maintains running win counts in
 data/preferences.json.
 """
 
+from __future__ import annotations
+
+
 import json
 from datetime import datetime
 from pathlib import Path

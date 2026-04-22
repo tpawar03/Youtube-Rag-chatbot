@@ -6,6 +6,9 @@ short segments into coherent paragraphs while preserving
 timestamp mappings for citation.
 """
 
+from __future__ import annotations
+
+
 import re
 from typing import Optional
 

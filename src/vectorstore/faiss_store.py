@@ -6,6 +6,9 @@ Uses langchain_community's FAISS integration for seamless
 connection to the retrieval chain.
 """
 
+from __future__ import annotations
+
+
 import json
 from pathlib import Path
 from typing import Optional

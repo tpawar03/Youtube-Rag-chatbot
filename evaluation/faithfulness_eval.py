@@ -11,6 +11,9 @@ Specifically targets fact-dense domains (news analysis, CS lectures,
 technical reviews) where hallucinated details are most consequential.
 """
 
+from __future__ import annotations
+
+
 import json
 import logging
 import re

@@ -10,6 +10,9 @@ For e5 models, automatically prepends the required "query: " / "passage: "
 prefixes.
 """
 
+from __future__ import annotations
+
+
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm

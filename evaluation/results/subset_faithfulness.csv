@@ -1,73 +1,73 @@
 cfg_name,video_id,domain,question,num_facts,supported_facts,fact_precision,llm
-top-minilm-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",2,1,0.5,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,5,5,1.0,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,5,3,0.6,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,9,5,0.5555555555555556,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,2,1,0.5,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,6,5,0.8333333333333334,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,4,1,0.25,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,3,2,0.6666666666666666,mistral
-top-minilm-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,6,5,0.8333333333333334,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",3,0,0.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,4,3,0.75,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,2,1,0.5,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,0,0.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,3,0,0.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,4,4,1.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,2,0,0.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,1,0,0.0,mistral
+top-minilm-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,3,0,0.0,mistral
 top-minilm-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,2,1,0.5,mistral
-top-minilm-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,4,3,0.75,mistral
-top-minilm-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,mistral
-top-minilm-llama2,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",2,2,1.0,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,6,6,1.0,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,5,3,0.6,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,3,1.0,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,1,1,1.0,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,10,9,0.9,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,4,2,0.5,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,5,3,0.6,llama2
-top-minilm-llama2,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,4,4,1.0,llama2
-top-minilm-llama2,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,3,3,1.0,llama2
+top-minilm-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,5,3,0.6,mistral
+top-minilm-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,2,1,0.5,mistral
+top-minilm-llama2,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",3,0,0.0,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,3,3,1.0,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,2,1,0.5,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,0,0.0,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,3,0,0.0,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,4,3,0.75,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,5,3,0.6,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,5,1,0.2,llama2
+top-minilm-llama2,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,3,0,0.0,llama2
+top-minilm-llama2,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,2,1,0.5,llama2
 top-minilm-llama2,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,4,4,1.0,llama2
-top-minilm-llama2,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,7,2,0.2857142857142857,llama2
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",2,1,0.5,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,5,5,1.0,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,5,3,0.6,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,2,0.6666666666666666,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,2,1,0.5,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,4,3,0.75,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,4,1,0.25,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,3,2,0.6666666666666666,mistral
-top-mpnet-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,6,5,0.8333333333333334,mistral
-top-mpnet-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,2,1,0.5,mistral
-top-mpnet-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,5,4,0.8,mistral
-top-mpnet-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",1,1,1.0,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,5,5,1.0,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,3,2,0.6666666666666666,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,2,0.6666666666666666,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,2,1,0.5,mistral
+top-minilm-llama2,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,llama2
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",3,0,0.0,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,3,3,1.0,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,4,3,0.75,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,1,0.3333333333333333,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,1,1,1.0,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,5,5,1.0,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,3,1,0.3333333333333333,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,1,0,0.0,mistral
+top-mpnet-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,4,4,1.0,mistral
+top-mpnet-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,1,1,1.0,mistral
+top-mpnet-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,6,3,0.5,mistral
+top-mpnet-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,2,1,0.5,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",2,1,0.5,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,4,3,0.75,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,2,2,1.0,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,1,1,1.0,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,1,1,1.0,mistral
 top-e5-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,5,4,0.8,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,4,1,0.25,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,3,2,0.6666666666666666,mistral
-top-e5-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,5,4,0.8,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,5,3,0.6,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,1,0,0.0,mistral
+top-e5-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,4,4,1.0,mistral
 top-e5-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,2,1,0.5,mistral
-top-e5-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,4,3,0.75,mistral
-top-e5-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",1,1,1.0,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,5,5,1.0,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,4,3,0.75,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,2,0.6666666666666666,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,2,1,0.5,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,6,5,0.8333333333333334,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,2,0,0.0,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,2,2,1.0,mistral
-sentence-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,4,4,1.0,mistral
-sentence-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,2,0,0.0,mistral
-sentence-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,4,3,0.75,mistral
-sentence-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",2,2,1.0,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,5,5,1.0,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,2,1,0.5,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,4,3,0.75,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,2,1,0.5,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,5,4,0.8,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,6,4,0.6666666666666666,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,3,2,0.6666666666666666,mistral
-no-rerank-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,5,5,1.0,mistral
+top-e5-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,7,7,1.0,mistral
+top-e5-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,2,1,0.5,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",3,0,0.0,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,4,3,0.75,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,2,1,0.5,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,0,0.0,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,3,0,0.0,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,4,4,1.0,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,5,3,0.6,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,1,0,0.0,mistral
+sentence-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,3,0,0.0,mistral
+sentence-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,1,1,1.0,mistral
+sentence-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,8,6,0.75,mistral
+sentence-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,2,2,1.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,"What does a chatbot use to pause before responding, as mentioned in the transcript?",3,0,0.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the purpose of using a vector database instead of storing raw data like text files and images?,3,3,1.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,How does the embedding model convert images into vectors in a vector database?,4,2,0.5,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the purpose of the RAG system in relation to employee handbooks?,3,0,0.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,When was the idea of Mixture of Experts (MOE) first published in a scientific journal?,3,0,0.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,What does MCP standardize for large language models and why is it considered exciting?,3,3,1.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,What is the current status of ASI (Artificial Superintelligence) as per the speaker?,3,0,0.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,What is AGI (Artificial General Intelligence) according to the speaker?,1,0,0.0,mistral
+no-rerank-mistral,VSFuqMh4hus,news_analysis,How does MoE models like IBM Granite's 4.0 series work according to the speaker?,3,0,0.0,mistral
 no-rerank-mistral,RRKwmeyIc24,cs_lectures,What kind of information are base models usually trained on?,1,0,0.0,mistral
-no-rerank-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,5,4,0.8,mistral
-no-rerank-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,3,1,0.3333333333333333,mistral
+no-rerank-mistral,RRKwmeyIc24,cs_lectures,Why is orchestration important in building AI systems that do more complex tasks than just generating text or answering questions?,6,6,1.0,mistral
+no-rerank-mistral,RRKwmeyIc24,cs_lectures,What are some examples of modalities other than text that can be valuable for certain AI tasks?,2,1,0.5,mistral

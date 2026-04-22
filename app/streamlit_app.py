@@ -5,6 +5,9 @@ A dark-themed chat application that lets users ask questions
 about YouTube video content using a RAG pipeline.
 """
 
+from __future__ import annotations
+
+
 import sys
 from pathlib import Path
 
@@ -22,6 +25,7 @@ from app.components.chat import (
     add_dual_assistant_message,
     format_overview_message,
 )
+from app.components.evaluation import render_evaluation_page
 from src.generation.grounding import score_sentences, render_with_highlights
 from app.components.status import render_ingest_complete
 from src.pipeline import IngestPipeline, QueryPipeline
@@ -176,6 +180,23 @@ if "picked_model" not in st.session_state:
 # ─────────────────────────────────────────────
 video_url, config, ingest_clicked, ui_state = render_sidebar()
 prompt_style = ui_state["prompt_style"]
+
+with st.sidebar:
+    st.divider()
+    st.subheader("🧭 View")
+    view = st.radio(
+        "Mode",
+        options=["Chat", "Evaluation & Ablation"],
+        label_visibility="collapsed",
+        key="app_view",
+    )
+
+# ─────────────────────────────────────────────
+# Evaluation view short-circuits the chat flow
+# ─────────────────────────────────────────────
+if view == "Evaluation & Ablation":
+    render_evaluation_page()
+    st.stop()
 
 
 # ─────────────────────────────────────────────

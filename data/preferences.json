@@ -1,6 +1,7 @@
 {
   "scores": {
-    "llama2": 5
+    "llama2": 5,
+    "mistral": 3
   },
   "history": [
     {
@@ -32,6 +33,24 @@
       "question": "Give the launch and impact of ChatGPT",
       "video_id": "bTA8sjgvA4c",
       "timestamp": "2026-04-18T19:55:05"
+    },
+    {
+      "winner": "mistral",
+      "question": "what are Hugging Face models?",
+      "video_id": "mEsleV16qdo",
+      "timestamp": "2026-04-21T19:34:14"
+    },
+    {
+      "winner": "mistral",
+      "question": "what is Hugging Face models?",
+      "video_id": "mEsleV16qdo",
+      "timestamp": "2026-04-21T20:30:46"
+    },
+    {
+      "winner": "mistral",
+      "question": "what are LLMs (Language Model)?",
+      "video_id": "mEsleV16qdo",
+      "timestamp": "2026-04-21T20:58:45"
     }
   ]
 }
